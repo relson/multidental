@@ -71,7 +71,7 @@
                         <div class="grid-4-12">
                             <label for="hora">Hora: <em class="formee-req">*</em></label>
                             <select name="hora" id="hora" class="txt bradius" required>
-                                <option value="{$linha.horario}" selected="selected">{$linha.horario}</option>
+                                <option value="{$linha.hora}" selected="selected">{$linha.hora}</option>
                             </select>
                         </div>
                         <div class="grid-12-12">

@@ -46,6 +46,8 @@ if (isset($_POST['acao'])) {
                     $agendamento->setObservacao($_POST['observacao']);
                     $agendamentoDAO->update($agendamento, $idagendamento);
                     
+                    $agendamentoDAO->update($agendamento, $idagendamento);
+                    
                     header('Location: Agenda.php');
                 }
             }

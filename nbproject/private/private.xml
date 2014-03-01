@@ -2,19 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Dropbox/www/multidental/view/selecionarPaciente.tpl</file>
-            <file>file:/C:/Dropbox/www/multidental/Agendamento.php</file>
-            <file>file:/C:/Dropbox/www/multidental/view/header.tpl</file>
-            <file>file:/C:/Dropbox/www/multidental/inc/agenda/agenda.php</file>
-            <file>file:/C:/Dropbox/www/multidental/Paciente.php</file>
-            <file>file:/C:/Dropbox/www/multidental/Anamnese.php</file>
-            <file>file:/C:/Dropbox/www/multidental/view/editAgendamento.tpl</file>
-            <file>file:/C:/Dropbox/www/multidental/model/class/Agendamento.class.php</file>
-            <file>file:/C:/Dropbox/www/multidental/Agenda.php</file>
-            <file>file:/C:/Dropbox/www/multidental/view/agendamento.tpl</file>
-            <file>file:/C:/Dropbox/www/multidental/model/class/Pessoa.class.php</file>
-            <file>file:/C:/Dropbox/www/multidental/model/dao/AgendamentoDAO.class.php</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

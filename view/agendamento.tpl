@@ -75,7 +75,7 @@
                     </div>
                     <div class="grid-12-12">
                         <label for="observacao">Observação</label>
-                        <textarea></textarea>
+                        <textarea name="observacao" id="observacao"></textarea>
                     </div>
                 </div><!-- conteudo -->
                 <div id="botoes">

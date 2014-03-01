@@ -13,7 +13,7 @@ class AgendamentoDAO extends Agendamento {
     public function insert($agendamento) {
         try {
             //query de insert
-            $stmt = $this->conexao->prepare("INSERT INTO agendamento (idPaciente, tipoagendamento, data, horario, observacao) VALUES (?, ?, ?, ?, ?)");
+            $stmt = $this->conexao->prepare("INSERT INTO agendamento (idPaciente, tipoagendamento, data, hora, observacao) VALUES (?, ?, ?, ?, ?)");
 
             //valores encapsulados nas variaveis da classe agendamento
             $stmt->bindValue(1, $agendamento->getIdPaciente());

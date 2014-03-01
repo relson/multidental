@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2013-11-29 12:56:06
+<?php /* Smarty version Smarty-3.1.14, created on 2014-03-01 09:33:04
          compiled from ".\view\agendamento.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2694652825f77d1ad26-91702299%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7d0b1f3248f329d0f9a998a0e587268fcf92fdb0' => 
     array (
       0 => '.\\view\\agendamento.tpl',
-      1 => 1385740561,
+      1 => 1393677024,
       2 => 'file',
     ),
   ),
@@ -96,7 +96,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     </div>
                     <div class="grid-12-12">
                         <label for="observacao">Observação</label>
-                        <textarea></textarea>
+                        <textarea name="observacao" id="observacao"></textarea>
                     </div>
                 </div><!-- conteudo -->
                 <div id="botoes">

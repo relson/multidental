@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2013-11-29 18:53:23
+<?php /* Smarty version Smarty-3.1.14, created on 2014-03-01 09:35:20
          compiled from ".\view\editAgendamento.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:157235287c32d5d80d7-25340722%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a96b0715abc92266cbc0e49e7aefeea561c7e384' => 
     array (
       0 => '.\\view\\editAgendamento.tpl',
-      1 => 1385761884,
+      1 => 1393677316,
       2 => 'file',
     ),
   ),
@@ -105,8 +105,8 @@ $_smarty_tpl->tpl_vars['linha']->_loop = true;
                         <div class="grid-4-12">
                             <label for="hora">Hora: <em class="formee-req">*</em></label>
                             <select name="hora" id="hora" class="txt bradius" required>
-                                <option value="<?php echo $_smarty_tpl->tpl_vars['linha']->value['horario'];?>
-" selected="selected"><?php echo $_smarty_tpl->tpl_vars['linha']->value['horario'];?>
+                                <option value="<?php echo $_smarty_tpl->tpl_vars['linha']->value['hora'];?>
+" selected="selected"><?php echo $_smarty_tpl->tpl_vars['linha']->value['hora'];?>
 </option>
                             </select>
                         </div>
