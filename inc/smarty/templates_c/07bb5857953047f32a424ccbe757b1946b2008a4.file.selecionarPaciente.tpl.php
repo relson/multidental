@@ -1,0 +1,68 @@
+<?php /* Smarty version Smarty-3.1.14, created on 2013-11-29 13:54:24
+         compiled from ".\view\selecionarPaciente.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:86265298b65965d683-67966494%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '07bb5857953047f32a424ccbe757b1946b2008a4' => 
+    array (
+      0 => '.\\view\\selecionarPaciente.tpl',
+      1 => 1385744060,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '86265298b65965d683-67966494',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_5298b6597e6de7_78081495',
+  'variables' => 
+  array (
+    'paciente' => 0,
+    'linha' => 0,
+  ),
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_5298b6597e6de7_78081495')) {function content_5298b6597e6de7_78081495($_smarty_tpl) {?><!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Multi Dental</title>
+        <meta charset="UTF-8">
+        <link type="text/css" rel="stylesheet" href="./css/style_select_paciente.css" />
+    </head>
+    <body>
+        <div id="container">
+                <h3>Pacientes</h3>
+                <hr />
+
+                <div id="conteudo">
+                    <table>
+
+                        <tr id="rotulo">
+                            <td id="prontuario">Prontuário</td>
+                            <td id="nome">Nome</td>
+                        </tr>
+                        <?php  $_smarty_tpl->tpl_vars['linha'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['linha']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['paciente']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['linha']->key => $_smarty_tpl->tpl_vars['linha']->value){
+$_smarty_tpl->tpl_vars['linha']->_loop = true;
+?>
+                            <tr onMouseOver="javascript:this.style.backgroundColor = '#d2d2d2'" onMouseOut="javascript:this.style.backgroundColor = ''">
+                                <td id="prontuario"><?php echo $_smarty_tpl->tpl_vars['linha']->value['prontuario'];?>
+</td>
+                                <td id="nome"><a href="Agendamento.php?pasel=<?php echo $_smarty_tpl->tpl_vars['linha']->value['prontuario'];?>
+" data-fancybox-type="iframe"><?php echo $_smarty_tpl->tpl_vars['linha']->value['nome'];?>
+</a></td>
+                            </tr>
+                        <?php } ?>
+                    </table>
+                    <div id="botao">
+                        <a class="bradius btn" href="Agendamento.php">Voltar</a>
+                        <a href="cadPaciente.php" class="btn bradius" target="_parent">Novo Paciente</a>
+                    </div>
+                </div><!-- conteudo -->
+        </div><!-- container -->
+    </body>
+</html>
+<?php }} ?>

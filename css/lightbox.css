@@ -1,0 +1,43 @@
+/* 
+    Created on : 26/09/2013, 10:08:08
+    Author     : Igor Lula
+*/
+
+/*Estilo para o efeito LightBox*/
+
+.backdrop {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .0;
+    filter: alpha(opacity=0);
+    z-index: 50;
+    display: none;
+}
+
+.box {
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    width: 500px;
+    height: 300px;
+    background: #FFF;
+    z-index: 51;
+    padding: 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    box-shadow: 0px 0px 5px #444;
+    -webkit-box-shadow: 0px 0px 5px #444;
+    -moz-box-shadow: 0px 0px 5px #444;
+    display: none;
+}
+
+.close {
+    float: right;
+    margin-right: 6px;
+    cursor: pointer;
+}

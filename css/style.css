@@ -1,0 +1,858 @@
+/* 
+    Document   : style
+    Created on : 27/08/2013, 07:23:43
+    Author     : Igor Lula
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    list-style: none;
+}
+
+body {
+    margin: 0 auto;
+    font: 16px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    background-color: #fff;
+}
+
+#container {
+    /*border: 1px solid #00E;*/
+    margin: 0 auto;    
+}
+
+/*Estilos para o form de login*/
+#formlogin {
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding: 30px 15px;
+    border: 1px solid #c0c0c0; /*#e1e1e1;*/
+    box-shadow: 0 2px 10px #c0c0c0;
+    -webkit-box-shadow: 0 2px 20px #c0c0c0;
+    -moz-box-shadow: 0 2px 10px #c0c0c0;
+    background-color: #FFF;
+}
+
+#formlogin img {
+    margin-left: 15px;
+    margin-bottom: 30px;
+}
+
+#formlogin input {
+    display: table-cell;
+    width: 300px;
+    height: 35px; 
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-left: 47px;
+    font: 18px Tahoma, Geneva, sans-serif;
+}
+
+#formlogin input[type="submit"] {
+    margin-bottom: 15px;
+    color: #fff;
+    background: #45bdf9;
+    font-weight: bold;
+}
+
+#formlogin input[type="submit"]:hover {
+    background: #09F;
+}
+
+#formlogin a {
+    color: #046fc9;
+}
+
+#formlogin a:link, a:visited {
+    text-decoration: none;
+    margin-left: 122px;
+}
+
+#formlogin a:focus {
+    color: #09F;   
+    text-shadow: 0 1px 10px #09f;
+}
+
+/*Estilos para o menu*/
+#menu {
+    background: #45bdf9;
+    height: 30px;
+    padding: 5px 10px;
+    font: 18px "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.menu {
+    margin-top: 5px;
+    list-style:none; 
+    //border:1px solid #c0c0c0; 
+    float:left;
+}
+
+.menu li {
+    position:relative; 
+    float:left; 
+    //border-right:1px solid #c0c0c0; 
+}
+
+.menu li#brand {
+    margin-right: 30px;
+}
+
+.menu li ul li#submenu {
+    margin-top: 5px;
+}
+
+.menu li a {
+    color: #FFF;
+    text-decoration: none;
+    margin-right: 10px;
+    padding: 0px 10px 5px 10px;
+    display: block;
+}
+
+.menu li a:hover {
+    text-shadow: 0 2px 5px #000;
+    color: #f2f2f2;
+}
+
+.menu li ul {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    background: #45bdf9;
+    display: none;
+}
+
+.menu li:hover ul {
+    display: block;
+}
+
+.menu li ul li {
+    display: block;
+    width: 120px;
+}
+
+#usuario {
+    float: right;
+    padding: 5px;
+    margin-right: 15px;
+    color: #FFF;
+}
+
+#usuario a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+#usuario a:hover {
+    text-shadow: 0 2px 5px #000;
+    color: #f2f2f2;
+}
+
+/*Estilos para o formulario de cadastro*/
+#formulario {
+    background-color: #FFF;
+    padding: 10px;
+    margin: 10px auto;
+    width: 800px;
+    border: 1px solid #c0c0c0;
+    box-shadow: 0 2px 10px #c0c0c0;
+    -webkit-box-shadow: 0 2px 20px #c0c0c0;
+    -moz-box-shadow: 0 2px 10px #c0c0c0;
+}
+
+#formulario h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+#formulario h3 {
+    text-align: center;
+}
+
+#formulario hr {
+    margin-bottom: 15px;
+}
+
+#formulario a {
+    text-decoration: none;
+    padding: 6px 18px;
+    height: 25px;
+    color: #FFF;
+}
+
+#botoes {
+    width: 400px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 25px;
+    clear: both;
+}
+
+/*Estilos para o formulario da anamnese*/
+#anamnese {
+    background-color: #FFF;
+    padding: 10px;
+    width: 800px;
+    margin: 10px auto;
+    border: 1px solid #c0c0c0;
+    box-shadow: 0 2px 10px #c0c0c0;
+    -webkit-box-shadow: 0 2px 20px #c0c0c0;
+    -moz-box-shadow: 0 2px 10px #c0c0c0;
+}
+
+#anamnese h3 {
+    text-align: center;
+}
+
+#anamnese hr {
+    margin-bottom: 15px;
+}
+
+#anamnese a {
+    text-decoration: none;
+    padding: 6px 18px;
+    height: 25px;
+    color: #FFF;
+}
+
+#anamneseBtn {
+    width: 350px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+
+#nomePaciente {
+    text-align: center;
+}
+
+#nomePaciente label {
+    font: 18px "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+/*Estilos para o formulario do exame fisico*/
+#exameFisico {
+    background-color: #FFF;
+    padding: 10px;
+    width: 800px;
+    margin: 10px auto;
+    border: 1px solid #c0c0c0;
+    box-shadow: 0 2px 10px #c0c0c0;
+    -webkit-box-shadow: 0 2px 20px #c0c0c0;
+    -moz-box-shadow: 0 2px 10px #c0c0c0;
+}
+
+#exameFisico h2 {
+    text-align: center;
+    margin-top: 10px;
+    font: 16px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: bold;
+}
+
+#exameFisico h3, h4 {
+    text-align: center;
+}
+
+#exameFisico h4 {
+    font: 14px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin-bottom: 15px;
+}
+
+#exameFisico hr {
+    margin-bottom: 15px;
+}
+
+#exameFisico a {
+    text-decoration: none;
+    padding: 6px 18px;
+    height: 25px;
+    color: #FFF;
+}
+
+#exa_paciente {
+    text-align: center;
+    margin-bottom: 10px;
+    font: 12px "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+#intrabucal {
+    margin-top: 30px;
+    border: thin solid black;
+}
+
+#exameBtn {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+
+/*Estilos para o menu da tabela*/
+#tabelamenu {
+    margin: 0 auto;
+    width: 100%;
+    margin: 0px 0px 10px 0px;
+    background: #45bdf9;
+}
+
+#tabelamenu p {
+    text-align: center;
+    padding-left: 10px;
+    padding-bottom: 0px;
+    color: #fff;
+    font: 26px "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+#tabelamenu input[type="button"] {
+    float: right;
+    background: #45bdf9;
+    color: #FFF;
+    margin-right: 0px;
+}
+
+#tabelamenu input[type="image"] {
+    float: left;
+    background: none;
+    color: #FFF;
+    padding: 10px;
+    margin: 5px;
+    padding-left: 5px;
+}
+
+#tabelamenu input[type="text"] {
+    float: left;
+    margin-top: 9px;
+    width: 300px;
+    height: 30px;
+    font: 16px "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+#tabelamenu input[type="button"] {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#tabelamenu a {
+    text-decoration: none;
+    float: right;
+    color: #FFF;
+    background: #45bdf9;
+    padding: 5px 15px 0px 15px;
+    height: 25px;
+}
+
+/*Estilos para tabelas*/
+#tabela {
+    background-color: #f5f5f5;
+    margin: 0 auto;
+    padding: 20px;
+    margin: 20px;
+}
+
+table {
+    width: 100%;
+    border-spacing: 0px;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+table td {
+    border-bottom: thin solid #09F;
+    padding: 5px 10px 5px 10px;
+}
+
+#tr td {
+    cursor: pointer;
+}
+
+tr.click:hover {
+    cursor: pointer;
+}
+
+table tr[id="rotulo"] {
+    font-weight: bold;
+    font: 18px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    background-color: #45bdf9;
+    color: #fff;
+}
+
+table td[id="prontuario"]  {
+    width: 80px;
+    text-align: center;
+}
+
+table td[id="acao"] {
+    width: 50px;
+    text-align: center;
+}
+
+table td a:link, a:visited {
+    text-decoration: none;
+    color: #000;
+}
+
+table td a:hover {
+    cursor: pointer;
+}
+
+table td[id="data"] {
+    width: 100px;
+    text-align: center;
+}
+
+table td[id="tratamentoValor"], td[id="tratamentoAprovado"], td[id="tratamentoFormaPagemento"], td[id="tratamentoParcelameto"] {
+    text-align: center;
+}
+
+table td[id="tratamentoPaciente"], td[id="tratamentoDentista"] {
+
+}
+
+table td[id="horario"] {
+    width: 100px;
+    text-align: center;
+}
+
+table td[id="observacao"] {
+    width: 250px;
+    text-align: center;
+}
+
+table td[id="atendido"] {
+    width: 150px;
+    text-align: center;
+}
+
+/*Estilos para o menu da tabela de tratamentos*/
+#menuTratamento {
+    margin: 0 auto;
+    width: 100%;
+    margin: 0px 0px 10px 0px;
+    background: #45bdf9;
+}
+
+#menuTratamento p {
+    text-align: center;
+    padding-left: 10px;
+    padding-bottom: 0px;
+    color: #fff;
+    font: 26px "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+#menuTratamento input[type="button"] {
+    float: right;
+    background: #45bdf9;
+    color: #FFF;
+    margin-right: 0px;
+}
+
+#menuTratamento input[type="image"] {
+    float: left;
+    background: none;
+    color: #FFF;
+    padding: 10px;
+    margin: 5px;
+    padding-left: 5px;
+}
+
+#menuTratamento input[type="text"] {
+    float: left;
+    margin-top: 9px;
+    margin-right: 10px;
+    width: 100px;
+    height: 30px;
+    font: 16px "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+#menuTratamento input[type="button"] {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#menuTratamento a {
+    text-decoration: none;
+    float: right;
+    color: #FFF;
+    background: #45bdf9;
+    padding: 5px 15px 0px 15px;
+    height: 25px;
+}
+
+#menuTratamento label {
+    float: left;
+    margin-top: 15px;
+    margin-right: 5px;
+}
+
+#filtro {
+    float: left;
+    height: 30px;
+    margin-top: 9px;
+    font: 16px "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+#filtrolabel {
+    margin-left: 25px;
+}
+
+/*Estilos para o odontograma*/
+#odontograma {
+    background-color: #FFF;
+    padding: 10px;
+    width: 900px;
+    margin: 20px auto;
+    border: 1px solid #c0c0c0;
+    box-shadow: 0 2px 10px #c0c0c0;
+    -webkit-box-shadow: 0 2px 20px #c0c0c0;
+    -moz-box-shadow: 0 2px 10px #c0c0c0;
+}
+
+#odontograma h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#odontograma h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    font: 18px "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+
+#odontograma a {
+    text-decoration: none;
+    padding: 6px 18px;
+    height: 25px;
+    color: #fff;
+}
+
+#odo_paciente {
+    text-align: center;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font: 18px "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+#obs {
+    margin: 0 auto;
+    width: 600px;
+}
+
+#img_odontograma {
+    margin: 15px 0;
+}
+
+#legenda_odontograma {
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 600px;
+}
+
+#legenda_odontograma fieldset {
+    padding: 15px 0px;
+    margin-bottom: 25px;
+}
+
+#legenda_odontograma span {
+    padding: 5px;
+    margin-right: 5px;
+    margin-left: 10px;
+    color: #fff;
+    font-weight: bold;
+}
+
+#legenda_odontograma label {
+}
+
+#odo_canal {
+    background: purple;
+}
+
+#odo_extracao {
+    background: red;
+}
+
+#odo_implante {
+    background: green;
+}
+
+#odo_protese {
+    background: blue;
+}
+
+#odo_restauracao {
+    background: #ff00cc;
+}
+
+#botoes_odontograma {
+    text-align: center;
+    margin-top: 15px;
+}
+
+/*Estilos para a agenda*/
+#agenda {
+    margin: 0 auto;
+    padding: 10px;
+}
+
+#agenda td {
+    border-bottom: thin solid #c0c0c0;
+    border-top: thin solid #c0c0c0;
+}
+
+#agenda td[id="agendaHora"] {
+    width: 5%;
+    text-align: center;
+    border-right: thin solid #c0c0c0;
+}
+
+#agenda td:hover {
+    background: #e2e2e2;
+}
+
+#agenda td[id="agendaHora"]:hover {
+    background: #f5f5f5;
+}
+
+#agenda td[id="rotuloHora"]:hover, #agenda td[id="rotulo2a"]:hover, #agenda td[id="rotulo3a"]:hover, #agenda td[id="rotulo4a"]:hover, #agenda td[id="rotulo5a"]:hover, #agenda td[id="rotulo6a"]:hover, #agenda td[id="rotuloSabado"]:hover {
+    background: #45bdf9;
+}
+
+#agendaPaciente {
+    color: #FFF;
+    margin-right: 50px;
+}
+
+#agendaImg {
+    margin-right: 10px;
+}
+
+#agenda2aA:hover {
+    text-shadow: 0 2px 10px #000;
+}
+
+#labeldata {
+    float: left;
+    margin-top: 15px;
+    margin-right: 5px;
+}
+
+
+/*Estilos para o financeiro*/
+#financeiro {
+
+}
+
+#balanco {
+    width: 85%;
+    margin: 0 auto;
+}
+
+#label-balanco-geral, #label-balanco-mes {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#balanco-mes hr, #balanco-geral hr {
+    margin-top: 2%;
+    margin-bottom: 1%;
+}
+
+#balanco-geral-inner, #balanco-mes-inner {
+    width: 100%;
+    text-align: center;
+}
+
+#label-entrada {
+    font-weight: normal;
+    color: #009b1f;
+}
+
+#span-entrada, #span-saida {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+#label-saida {
+    font-weight: normal;
+    color: red;
+}
+
+#label-total {
+    font-weight: normal;
+    color: #217b01;
+}
+
+#span-total {
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+#balanco-mes {
+
+    width: 40%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    padding: 10px;
+    color: #FFF;
+    background-color: #45bdf9;
+    display: table;
+}
+
+#balanco-geral {
+    float: right;
+    width: 40%;
+    padding: 10px;
+    color: #FFF;
+    background-color: #45bdf9;
+    display: table;
+}
+
+#separator {
+    margin-top: 5%;
+    padding: 3px 0;
+    width: 100%;
+    color: #FFF;
+    background: #45bdf9;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+#movimentacao {
+    width: 100%;
+    clear: both;
+}
+
+#movimentacao label {
+    font-size: 1.2em;
+}
+
+#movimentacao-select-categoria {
+    float: right;
+}
+
+#movimentacao select {
+    height: 30px;
+}
+
+#movimentacao table {
+    margin-top: 20px;
+    clear: both;
+}
+
+#movimentacao table td[id="movimentacao-data"] {
+    width: 100px;
+    text-align: center;
+}
+
+#movimentacao table td[id="movimentacao-categoria"] {
+    width: 200px;
+    text-align: center;
+}
+
+#movimentacao table td[id="movimentacao-valor"] {
+    width: 150px;
+    text-align: center;
+}
+
+#movimentacao table td[id="movimentacao-data-total"], #movimentacao table td[id="movimentacao-descricao-total"], #movimentacao table td[id="movimentacao-categoria-total"] {
+    background-color: #c0c0c0;
+    font-weight: bold;
+    text-align: center;
+}
+
+#movimentacao table td[id="movimentacao-valor-total"] {
+    width: 150px;
+    text-align: center;
+    background-color: #c0c0c0;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.positivo {
+    color: #217b01;
+}
+
+.negativo {
+    color: red;
+}
+
+
+/*Estilos para pagina de erro*/
+#erro {
+    width: 400px;
+    height: 120px;
+    text-align: center;
+    margin: 50px auto;
+    padding-top: 50px;
+    background: #45bdf9;
+    color: #FFF;
+    box-shadow: 0 2px 10px #45bdf9;
+    -webkit-box-shadow: 0 2px 10px #45bdf9;
+    -moz-box-shadow: 0 2px 10px #45bdf9;
+}
+
+#erro_h1, #erro_h3 {
+    text-shadow: 0 2px 3px #000;
+}
+
+#erro h3 {
+    margin-top: 5px;
+}
+
+/*Estilos das classes*/
+.txt {
+    border: none;
+    border: thin solid #c0c0c0; /*#e2e2e2;*/
+}
+
+.txt:focus, .btn:focus {
+    border: thin solid #09F;
+    box-shadow: 0 2px 10px #45bdf9;
+    -webkit-box-shadow: 0 2px 10px #45bdf9;
+    -moz-box-shadow: 0 2px 10px #45bdf9;
+}
+
+.btn {
+    border: none;
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 5px;
+    margin: 5px;
+    background: #45bdf9;
+    color: #FFF;
+}
+
+
+.btnAction {
+    width: auto;
+    padding: 0px 5px;
+    margin: 10px;
+}
+
+.btn:hover {
+    background: -webkit-linear-gradient(top, #459DFC 30%, #4589FC);
+}
+
+/*Classes de herança*/
+.bradius {
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+
+/*Multiplo estilos*/
+.txt, .txt:focus {
+    transition: all 5s linear;
+    -webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+}

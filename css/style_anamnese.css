@@ -1,0 +1,188 @@
+/* 
+    Created on : 01/10/2013, 20:04:52
+    Author     : Igor Lula
+*/
+
+* {
+    list-style: none;
+    outline: none;
+}
+
+body {
+    margin: 0;
+    font: 16px "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+h3 {
+    color: #555;
+    text-align: center;
+    margin: 0;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    border-top: thin solid #e0e0e0;
+}
+
+/*Estilos para o menu*/
+#menu {
+    background: #45bdf9;
+    height: 30px;
+    padding: 5px 10px;
+    font: 18px "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.menu {
+    margin-left: -40px;
+    margin-top: 5px;
+    list-style:none; 
+    //border:1px solid #c0c0c0; 
+    float:left;
+}
+
+.menu li {
+    position:relative; 
+    float:left; 
+    //border-right:1px solid #c0c0c0; 
+}
+
+.menu li#brand {
+    margin-right: 30px;
+    margin-left: 0;
+}
+
+.menu li ul li#submenu {
+    margin-top: 5px;
+}
+
+.menu li a {
+    color: #FFF;
+    text-decoration: none;
+    margin-right: 10px;
+    padding: 0px 10px 5px 10px;
+    display: block;
+}
+
+.menu li a:hover {
+    text-shadow: 0 2px 5px #000;
+    color: #f2f2f2;
+}
+
+.menu li ul {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    background: #45bdf9;
+    display: none;
+}
+
+.menu li:hover ul {
+    display: block;
+}
+
+.menu li ul li {
+    display: block;
+    width: 120px;
+}
+
+#usuario {
+    float: right;
+    padding: 5px;
+    margin-right: 15px;
+    color: #FFF;
+}
+
+#usuario a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+#usuario a:hover {
+    text-shadow: 0 2px 5px #000;
+    color: #f2f2f2;
+}
+
+#conteudo {
+    margin: 20px auto;
+    width: 490px;
+    height: 580px;
+    padding: 30px 15px 15px 25px;
+    border: 1px solid #c0c0c0; /*#e1e1e1;*/
+    box-shadow: 0 2px 10px #c0c0c0;
+    -webkit-box-shadow: 0 2px 20px #c0c0c0;
+    -moz-box-shadow: 0 2px 10px #c0c0c0;
+}
+
+#conteudo a {
+    float: left;
+    margin-bottom: 20px;
+    margin-left: 35px;
+    text-align: center;
+    width: 150px;
+    padding: 10px 15px 0px 15px;
+}
+
+#foto {
+    float: left;
+    margin-right: 20px;
+
+}
+
+#foto img {
+    border: thin solid #c0c0c0;
+    box-shadow: 0 2px 10px #c0c0c0;
+    -moz-box-shadow: 0 2px 10px #c0c0c0;
+    -webkit-box-shadow: 0 2px 10px #c0c0c0;
+}
+
+#obs {
+    margin-bottom: 0px;
+    margin-left: 2px;
+}
+
+#conteudo p label {
+    padding-top: 5px;
+}
+
+.btn:hover, #botoes a:hover {
+    background: -moz-linear-gradient(top, #459DFC 30%, #4589FC);
+    background: -webkit-linear-gradient(top, #459DFC 30%, #4589FC);
+}
+
+.btn {
+    text-decoration: none;
+    color: #FFF;
+    border: none;
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 5px;
+    margin: 5px;
+    background: #45bdf9;
+}
+
+.bradius {
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+.txt {
+    border: none;
+    border: thin solid #c0c0c0; /*#e2e2e2;*/
+}
+
+.txt:focus {
+    border: thin solid #09F;
+    box-shadow: 0 2px 10px #45bdf9;
+    -webkit-box-shadow: 0 2px 10px #45bdf9;
+    -moz-box-shadow: 0 2px 10px #45bdf9;
+}
+
+.txt, .txt:focus {
+    transition: all 5s linear;
+    -webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+}

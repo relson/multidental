@@ -1,0 +1,135 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 29/11/2013, 13:11:50
+    Author     : Igor Lula Ribeiro
+*/
+
+* {
+    list-style: none;
+    outline: none;
+}
+
+body {
+    margin: 0;
+    font: normal 16px/1.1em Arial,Sans-Serif;
+}
+
+h3 {
+    margin: .5em 1% .8%;
+    padding: 0.5% 0.5% 0.8%;
+    font-size: 2em;
+    line-height: 1.2em;
+    letter-spacing: -.035em;
+    color: #2b2b2b;
+    font-weight: normal;
+    text-align: center;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    border-top: thin solid #e0e0e0;
+}
+
+#conteudo table {
+    background-color: #f5f5f5;
+    margin: 0 auto;
+    padding: 20px;
+    margin: 20px;
+}
+
+table {
+    width: 94%;
+    border-spacing: 0px;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+table td {
+    /*border-bottom: thin solid #09F;*/
+    padding: 5px 10px 5px 10px;
+}
+
+table td[id="prontuario"]  {
+    width: 80px;
+    text-align: center;
+}
+
+table tr[id="rotulo"] {
+    font-weight: bold;
+    font: 18px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    background-color: #45bdf9;
+    color: #fff;
+}
+
+#conteudo a {
+    text-decoration: none;
+    color: #000;
+}
+
+#botao {
+    text-align: center;
+    width: 500px;
+    margin: 35px auto;
+}
+
+#botao a {
+    color: #FFF;
+    margin: 0 10px;
+    padding: 10px 30px;
+}
+
+/*Estilos das classes*/
+.txt {
+    border: none;
+    border: thin solid #c0c0c0; /*#e2e2e2;*/
+}
+
+.txt:focus, .btn:focus {
+    border: thin solid #09F;
+    box-shadow: 0 2px 10px #45bdf9;
+    -webkit-box-shadow: 0 2px 10px #45bdf9;
+    -moz-box-shadow: 0 2px 10px #45bdf9;
+}
+
+.btn {
+    border: none;
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 5px;
+    margin: 5px;
+    background: #45bdf9;
+    color: #FFF;
+}
+
+
+.btnAction {
+    width: auto;
+    padding: 0px 5px;
+    margin: 10px;
+}
+
+.btn:hover {
+    background: -webkit-linear-gradient(top, #459DFC 30%, #4589FC);
+}
+
+/*Classes de herança*/
+.bradius {
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+
+/*Multiplo estilos*/
+.txt, .txt:focus {
+    transition: all 5s linear;
+    -webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+}

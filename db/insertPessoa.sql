@@ -1,0 +1,27 @@
+--Inserindo Pessoas
+
+INSERT INTO pessoa (nome, rg, cpf, sexo, estadoCivil, dataNascimento, naturalidade, rua, numero, complemento, bairro, cidade, uf, pais, cep, telefone, celular, email, foto, ativo) VALUES
+('Fernanda Castro Ribeiro', '', '867.440.034-53', 'F', 'solteiro', '1990-03-19', 'Feira de Santana',
+ 'Rua Araraquara', '103', '', 'Caseb', 'Feira de Santana', 'BA', 'Brasil', '44052-061',
+ '(75)3247-5125', '(75)9298-8634', 'fernandacastro@hotmail.com', 'woman.png', 1),
+('José Carvalho Cavalcanti', '', '678.163.792-42', 'M', 'viuvo', '1953-08-19', 'Feira de Santana',
+ 'Rua Amaralina', '1026', '', 'Jardim Cruzeiro', 'Feiira de Santana', 'BA', 'Brasil', '44024-308',
+ '(75)5656-4687', '(75)9884-4826', 'andrecavalcanti@gmail.com', 'man.png', 1),
+('Letícia Correia Oliveira', '', '146.856.612-14', 'F', 'solteiro', '1986-07-03', 'Salvador',
+ 'Caminho 10', '19', 'Conjunto Feira IV', 'Calumbi', 'Feira de Santana', 'BA', 'Brasil', '44008-130',
+ '(75)3224-1421', '(75)9127-0443', 'let_oliveira@hotmail.com', 'woman.png', 1),
+('Gabriela Barbosa Sousa', '', '371.152.071-51', 'F', 'solteiro', '1994-12-20', 'Santo Estevão',
+ 'Rua Leones', '287', '', 'Santa Mônica', 'Feira de Santana', 'BA', 'Brasil', '44078-230',
+ '(75)3623-2288', '(75)8217-0765', 'gabi.barbosa@live.com', 'woman.png', 1),
+('Maria Rodrigues Pinto', '', '914.793.980-04', 'F', 'casado', '1968-01-10', 'Porto Alegre',
+ 'Av Alberto Passos', '81', '', 'Centro', 'Cruz das Almas', 'BA', 'Brasil', '44380-000',
+ '(75)3616-7240', '(75)8821-0911', 'mrpinto@yahoo.com.br', 'woman.png', 1),
+('Marcos Dias Sousa', '', '285.468.720-58', 'M', 'solteiro', '1987-02-21', 'Feira de Santana',
+ 'Caminho 22', '7', 'Conjunto Feira IX', 'Calumbi', 'Feira de Santana', 'BA', 'Brasil', '44009-280',
+ '(75)3623-2644', '(75)8114-0539', 'marcossousa@gmail.com', 'man.png', 1),
+('Luís Cunha Goncalves', '', '732.640.295-70', 'M', 'casado', '1968-11-14', 'São Paulo',
+ 'Rua Santa Rita', '360', '', 'Pinheiro', 'Conceição da Feira', 'BA', 'Brasil', '44320-990',
+ '(75)3244-2946', '(75)8827-0390', 'luis@madeirascunha.com.br', 'man.png', 1),
+('Antônio Castro Martins', '', '714.115.990-80', 'M', 'viuvo', '1957-06-19', 'São Paulo',
+ 'Rua Calamar', '1470', '', 'Conceição', 'Feira de Santana', 'BA', 'Brasil', '44065-452',
+ '(75)3614-9979', '(75)8117-0222', 'felipempereira@hotmail.com', 'man.png', 1);

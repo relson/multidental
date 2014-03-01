@@ -1,0 +1,80 @@
+.tabelamesagenda {
+
+}
+
+.tabelamesagenda thead tr td {
+    text-align: center;
+    font-size: 15px;
+    padding: 10px 0;
+    background: #d5d5d5;
+    border: 1px solid #E7E7E7;
+    color: #444;
+}
+
+.tabelamesagenda tbody tr td {
+    font-size: 15px;
+    padding: 10px;
+    width: 150px;
+    height: 100px;
+    background: #f7f7f7;
+    border: 1px solid #DBDBDB;
+    color: #008AB3;
+    font-weight: bold;
+    cursor:pointer;
+}
+
+.tabelamesagenda tbody tr td:hover {
+    background: #45bdf9;
+    color:#FFF;
+}
+
+.tabelamesagenda tbody tr td:hover span.numerotexto a{
+    color:#FFF;
+}
+
+.tabelamesagenda tbody tr td.semconteudo,.tabelamesagenda tbody tr td.semconteudo:hover {
+    border: 0;
+    background: none;
+    cursor:auto;
+}
+
+.tabelamesagenda tbody tr td.selected {
+    background: -webkit-linear-gradient(top, #d0d0d0 40%, #c0c0c0);
+}
+
+.tabelamesagenda tbody tr td.selected:hover {
+    background: #45bdf9;
+    color: #FFF;
+}
+
+.tabelamesagenda tbody tr td.selected:hover span.numerotexto a {
+    color: #FFF;
+}
+
+.tabelamesagenda tbody tr td span.numerotexto {
+    font-weight: normal;
+    display: block;
+    text-align: right;
+}
+
+.tabelamesagenda tbody tr td span.numerotexto a {
+    text-decoration: none;
+    color: #008AB3;
+}
+
+.tabelamesagenda tbody tr td span.numerotexto a:hover {
+    text-shadow: 0 2px 5px #000;
+    color: #FFF;
+}
+
+.btn-controlemes {
+    font-size: 15px!important;
+    padding: 10px!important;
+    background: #D7D7D7!important;
+    color: #47565A!important;
+    cursor: pointer!important;
+}
+
+.btn-controlemes:hover {
+    background: #EBEBEB!important;
+}
