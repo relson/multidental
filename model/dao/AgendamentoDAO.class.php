@@ -104,7 +104,7 @@ class AgendamentoDAO extends Agendamento {
     public function selectInnerData($data) {
         try {
             $date = $this->date2US($data);
-            $stmt = $this->conexao->query("SELECT a.idAgendamento, a.idPaciente, a.tipoAgendamento, a.data, HOUR(a.hora) as hora, MINUTE(a.hora) as minuto, p.nome, p.telefone, p.email FROM
+            $stmt = $this->conexao->query("SELECT a.idAgendamento, a.idPaciente, a.tipoAgendamento, a.data, HOUR(a.hora) as hora, MINUTE(a.hora) as minuto, a.observacao, p.nome, p.telefone, p.email FROM
                                                   agendamento a INNER JOIN paciente pa INNER JOIN pessoa p
                                                   on pa.idPaciente = a.idPaciente and pa.idPessoa = p.idPessoa
                                                   WHERE a.status = '1' and a.data = '$date'
