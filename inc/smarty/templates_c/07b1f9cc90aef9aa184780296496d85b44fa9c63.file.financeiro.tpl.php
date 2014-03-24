@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2013-12-02 23:30:05
+<?php /* Smarty version Smarty-3.1.14, created on 2014-03-23 16:05:46
          compiled from ".\view\financeiro.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:9184528fa52773f857-09177076%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '07b1f9cc90aef9aa184780296496d85b44fa9c63' => 
     array (
       0 => '.\\view\\financeiro.tpl',
-      1 => 1386037801,
+      1 => 1395601545,
       2 => 'file',
     ),
   ),
@@ -34,8 +34,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <div id="menuTratamento">
             <p>Financeiro</p>
 
-            <a href="" class="btn btnAction bradius">Registrar Pagamento</a>
-            <a href="" class="btn btnAction bradius">Registrar Despesa</a>
+            <a href="" class="btn btnAction bradius">Lançar Pagamento</a>
+            <a href="" class="btn btnAction bradius">Lançar Despesa</a>
             <label for="fromData">Filtra de</label>
             <input type="text" class="txt bradius" name="fromData" id="fromData" placeholder="__/__/____" />
             <label for="toData">até</label>
@@ -101,7 +101,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     <tr id="rotulo">
                         <td id="movimentacao-data">Data</td>
                         <td id="movimentacao-descricao">Descrição</td>
-                        <td id="movimentacao-categoria">Categoria</td>
+                        <td id="movimentacao-categoria">Forma de Pagamento</td>
                         <td id="movimentacao-valor">Valor - R$</td>
                     </tr>
                     <tr>

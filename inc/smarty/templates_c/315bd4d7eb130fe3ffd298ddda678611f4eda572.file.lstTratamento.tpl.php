@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2013-11-22 17:19:53
+<?php /* Smarty version Smarty-3.1.14, created on 2014-03-23 15:38:44
          compiled from "view\lstTratamento.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:157435282a69855bc30-61174449%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '315bd4d7eb130fe3ffd298ddda678611f4eda572' => 
     array (
       0 => 'view\\lstTratamento.tpl',
-      1 => 1385151589,
+      1 => 1395599923,
       2 => 'file',
     ),
   ),
@@ -36,9 +36,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <div id="menuTratamento">
             <p>Plano de Tratamento - <?php echo $_smarty_tpl->tpl_vars['nome']->value;?>
 </p>
-            <input type="button" value="Deletar Selecionados" class="btn btnAction bradius" onclick="confirmDelTratamento();" />
             <input type="hidden" name="idPaciente" value="<?php echo $_smarty_tpl->tpl_vars['prontuario']->value;?>
 " />
+            <input type="button" value="Deletar Selecionados" class="btn btnAction bradius" onclick="confirmDelTratamento();" />
+            <input type="button" value="Aprovar Orcamento" class="btn btnAction bradius" onclick="aprovaOrcamento();" />
             <a href="Tratamento.php?tid=<?php echo $_smarty_tpl->tpl_vars['prontuario']->value;?>
 " class="tratamento btn btnAction bradius" data-fancybox-type="iframe">Novo Procedimento</a>
             <label for="fromData">De</label>

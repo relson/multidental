@@ -13,15 +13,13 @@ class TratamentoDAO extends Tratamento {
     public function insert($tratamento) {
         try {
             //query de insert
-            $stmt = $this->conexao->prepare("INSERT INTO tratamento (idPaciente, data, procedimento, valor, orcamentoAprovado, realizado) VALUES (?, ?, ?, ?, ?, ?)");
+            $stmt = $this->conexao->prepare("INSERT INTO tratamento (idPaciente, data, procedimento, valor) VALUES (?, ?, ?, ?)");
 
             //valores encapsulados nas variaveis da classe Tratamento
             $stmt->bindValue(1, $tratamento->getIdPaciente());
             $stmt->bindValue(2, $tratamento->getData());
             $stmt->bindValue(3, $tratamento->getProcedimento());
             $stmt->bindValue(4, $tratamento->getValor());
-            $stmt->bindValue(5, $tratamento->getOrcamentoAprovado());
-            $stmt->bindValue(6, $tratamento->getRealizado());
 
             //execução da query
             $stmt->execute();

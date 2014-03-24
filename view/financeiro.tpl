@@ -7,8 +7,8 @@
         <div id="menuTratamento">
             <p>Financeiro</p>
 
-            <a href="" class="btn btnAction bradius">Registrar Pagamento</a>
-            <a href="" class="btn btnAction bradius">Registrar Despesa</a>
+            <a href="" class="btn btnAction bradius">Lançar Pagamento</a>
+            <a href="" class="btn btnAction bradius">Lançar Despesa</a>
             <label for="fromData">Filtra de</label>
             <input type="text" class="txt bradius" name="fromData" id="fromData" placeholder="__/__/____" />
             <label for="toData">até</label>
@@ -73,7 +73,7 @@
                     <tr id="rotulo">
                         <td id="movimentacao-data">Data</td>
                         <td id="movimentacao-descricao">Descrição</td>
-                        <td id="movimentacao-categoria">Categoria</td>
+                        <td id="movimentacao-categoria">Forma de Pagamento</td>
                         <td id="movimentacao-valor">Valor - R$</td>
                     </tr>
                     <tr>

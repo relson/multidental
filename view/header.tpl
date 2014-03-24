@@ -54,7 +54,7 @@
                     maxHeight: 600,
                     fitToView: false,
                     width: '500px',
-                    height: '380px',
+                    height: '300px',
                     autoSize: false,
                     closeClick: false,
                     openEffect: 'fade',
@@ -120,6 +120,10 @@
                 if (confirm('Deseja realmente excluir o procedimento?')) {
                     document.delete_tratamento.submit();
                 }
+            }
+            
+            function aprovaOrcamento() {
+                document.aprova_orcamento.submit();
             }
         </script>
     </head>

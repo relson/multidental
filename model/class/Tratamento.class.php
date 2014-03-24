@@ -89,7 +89,7 @@ class Tratamento extends PDOConnectionFactory {
     }
 
     public function setData($data) {
-        $this->data = $this->date2US($data);
+        $this->data = $data;
     }
 
     public function setProcedimento($procedimento) {

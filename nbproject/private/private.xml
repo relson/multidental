@@ -3,8 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Dropbox/www/multidental/view/lstPacientes.tpl</file>
-            <file>file:/C:/Dropbox/www/multidental/Paciente.php</file>
+            <file>file:/C:/Dropbox/www/multidental/view/header.tpl</file>
+            <file>file:/C:/Dropbox/www/multidental/view/lstTratamento.tpl</file>
+            <file>file:/C:/Dropbox/www/multidental/config/Configs.php</file>
+            <file>file:/C:/Dropbox/www/multidental/model/class/Tratamento.class.php</file>
+            <file>file:/C:/Dropbox/www/multidental/view/editTratamento.tpl</file>
+            <file>file:/C:/Dropbox/www/multidental/view/financeiro.tpl</file>
+            <file>file:/C:/Dropbox/www/multidental/model/dao/TratamentoDAO.class.php</file>
+            <file>file:/C:/Dropbox/www/multidental/Tratamento.php</file>
+            <file>file:/C:/Dropbox/www/multidental/view/tratamento.tpl</file>
         </group>
     </open-files>
 </project-private>

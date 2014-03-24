@@ -14,21 +14,21 @@ if (isset($_POST['acao'])) {
 
     switch ($acao) {
         case 'salvar':
-            if (isset($_POST['data']) and isset($_POST['procedimento']) and isset($_POST['valor']) and isset($_POST['orcamento'])) {
+            if (isset($_POST['data']) and isset($_POST['procedimento']) and isset($_POST['valor'])) {
 
-                if ($_POST['data'] != '' and $_POST['procedimento'] != '' and $_POST['valor'] != '' and $_POST['orcamento'] != '') {
+                if ($_POST['data'] != '' and $_POST['procedimento'] != '' and $_POST['valor'] != '') {
                     $idPaciente = $_POST['paciente'];
 
                     $tratamento->setIdPaciente($idPaciente);
                     $tratamento->setData($_POST['data']);
                     $tratamento->setProcedimento($_POST['procedimento']);
                     $tratamento->setValor($tratamento->convertValor($_POST['valor']));
-                    $tratamento->setOrcamentoAprovado($_POST['orcamento']);
+//                    $tratamento->setOrcamentoAprovado($_POST['orcamento']);
                     $tratamento->setRealizado($_POST['realizado']);
 
                     $tratamentoDAO->insert($tratamento);
 
-                    //echo 'idPaciente: '.$tratamento->getIdPaciente().'<br /> Data: '.$tratamento->getData().'<br /> Procedimento: '.$tratamento->getProcedimento();
+                    //echo 'idPaciente: '.$tratamento->getIdPaciente().'<br /> Data: '.$tratamento->getData().'<br /> Procedimento: '.$tratamento->getProcedimento().'<br /> Valor: '.$tratamento->getValor();
 
                     header('Location: Tratamento.php?ptr=' . $idPaciente);
                 }
@@ -124,7 +124,7 @@ else if (isset($_POST['fromData']) and isset($_POST['toData']) and $_POST['fromD
     $lstTratamento[0]['data'] = $tratamento->getData2BR($lstTratamento[0]['data']);
 
     $sm->assign("lstTratamento", $lstTratamento);
-
+    
     $sm->display('view/editTratamento.tpl');
 } else if (isset($_GET['tid'])) {
     $idPaciente = $_GET['tid'];

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2013-11-21 17:24:56
+<?php /* Smarty version Smarty-3.1.14, created on 2014-03-23 15:26:41
          compiled from "view\editTratamento.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:26715283ad5b8cb3a3-23526366%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '88472811a4375aa1c7c536d0ca645d8241536055' => 
     array (
       0 => 'view\\editTratamento.tpl',
-      1 => 1385065489,
+      1 => 1395599193,
       2 => 'file',
     ),
   ),
@@ -58,12 +58,12 @@ foreach ($_from as $_smarty_tpl->tpl_vars['linha']->key => $_smarty_tpl->tpl_var
 $_smarty_tpl->tpl_vars['linha']->_loop = true;
 ?>
             <div id="container">
-                <form class="formee" id="frm_tratamento" method="post" enctype="multipart/form-data" target="_parent">
+                <form class="formee" id="frm_tratamento" method="post" target="_parent">
                     <h3>Procedimento</h3>
                     <hr />
                     <div id="formTratamento">
 
-                        <div class="grid-12-12">
+                        <div class="grid-6-12">
                             <label>Procedimento:</label>
                             <input type="text" class="txt bradius" id="procedimento" name="procedimento" value="<?php echo $_smarty_tpl->tpl_vars['linha']->value['procedimento'];?>
 " />
@@ -78,21 +78,15 @@ $_smarty_tpl->tpl_vars['linha']->_loop = true;
                             <input type="text" class="txt bradius" id="valor" name="valor" value="<?php echo $_smarty_tpl->tpl_vars['linha']->value['valor'];?>
 " />
                         </div>
+                        
+                                                
                         <div class="grid-6-12">
-                            <label>Orçamento aprovado:</label>
-                            <select class="txt bradius" name="orcamento" id="orcamento">
-                                <option value="" <?php if ($_smarty_tpl->tpl_vars['linha']->value['orcamentoAprovado']==''){?>selected="selected"<?php }?>>[Escolha]</option>
-                                <option value="Sim" <?php if ($_smarty_tpl->tpl_vars['linha']->value['orcamentoAprovado']=='Sim'){?>selected="selected"<?php }?>>Sim</option>
-                                <option value="Não" <?php if ($_smarty_tpl->tpl_vars['linha']->value['orcamentoAprovado']!='Sim'){?>selected="selected"<?php }?>>Não</option>
-                            </select>
-                        </div>
-                                                <div class="grid-6-12">
                             <label>Procedimento Realizado?</label>
                             <select class="txt bradius" name="realizado" id="realizado">
                                 <option value="" <?php if ($_smarty_tpl->tpl_vars['linha']->value['realizado']==''){?>selected="selected"<?php }?>>[Escolha]</option>
-                                <option value="Sim" <?php if ($_smarty_tpl->tpl_vars['linha']->value['realizado']=="Sim"){?>selected="selected"<?php }?>>Sim</option>
-                                <option value="Não" <?php if ($_smarty_tpl->tpl_vars['linha']->value['realizado']=="Não"){?>selected="selected"<?php }?>>Não</option>
-                                <option value="Em andamento" <?php if ($_smarty_tpl->tpl_vars['linha']->value['realizado']=="Em andamento"){?>selected="selected"<?php }?>>Em andamento</option>
+                                <option value="1" <?php if ($_smarty_tpl->tpl_vars['linha']->value['realizado']=="Sim"){?>selected="selected"<?php }?>>Sim</option>
+                                <option value="0" <?php if ($_smarty_tpl->tpl_vars['linha']->value['realizado']=="Não"){?>selected="selected"<?php }?>>Não</option>
+                                <option value="2" <?php if ($_smarty_tpl->tpl_vars['linha']->value['realizado']=="Em andamento"){?>selected="selected"<?php }?>>Em andamento</option>
                             </select>
                         </div>
                     </div>

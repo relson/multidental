@@ -5,8 +5,9 @@
     <form name="delete_tratamento" method="post">
         <div id="menuTratamento">
             <p>Plano de Tratamento - {$nome}</p>
-            <input type="button" value="Deletar Selecionados" class="btn btnAction bradius" onclick="confirmDelTratamento();" />
             <input type="hidden" name="idPaciente" value="{$prontuario}" />
+            <input type="button" value="Deletar Selecionados" class="btn btnAction bradius" onclick="confirmDelTratamento();" />
+            <input type="button" value="Aprovar Orcamento" class="btn btnAction bradius" onclick="aprovaOrcamento();" />
             <a href="Tratamento.php?tid={$prontuario}" class="tratamento btn btnAction bradius" data-fancybox-type="iframe">Novo Procedimento</a>
             <label for="fromData">De</label>
             <input type="text" class="txt bradius" name="fromData" id="fromData" placeholder="__/__/____" />

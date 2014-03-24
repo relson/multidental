@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2013-11-22 15:10:17
+<?php /* Smarty version Smarty-3.1.14, created on 2014-03-23 15:46:36
          compiled from "view\header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2389452825f766de042-19625579%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '26dec6f3580ea8d8486b5f64f679a1451b55f0ec' => 
     array (
       0 => 'view\\header.tpl',
-      1 => 1385143816,
+      1 => 1395599987,
       2 => 'file',
     ),
   ),
@@ -75,7 +75,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     maxHeight: 600,
                     fitToView: false,
                     width: '500px',
-                    height: '380px',
+                    height: '300px',
                     autoSize: false,
                     closeClick: false,
                     openEffect: 'fade',
@@ -141,6 +141,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 if (confirm('Deseja realmente excluir o procedimento?')) {
                     document.delete_tratamento.submit();
                 }
+            }
+            
+            function aprovaOrcamento() {
+                document.aprova_orcamento.submit();
             }
         </script>
     </head>

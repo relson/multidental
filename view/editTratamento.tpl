@@ -27,12 +27,12 @@
     <body>
         {foreach from=$lstTratamento item=linha}
             <div id="container">
-                <form class="formee" id="frm_tratamento" method="post" enctype="multipart/form-data" target="_parent">
+                <form class="formee" id="frm_tratamento" method="post" target="_parent">
                     <h3>Procedimento</h3>
                     <hr />
                     <div id="formTratamento">
 
-                        <div class="grid-12-12">
+                        <div class="grid-6-12">
                             <label>Procedimento:</label>
                             <input type="text" class="txt bradius" id="procedimento" name="procedimento" value="{$linha.procedimento}" />
                         </div>
@@ -44,14 +44,14 @@
                             <label>Valor - R$:</label>
                             <input type="text" class="txt bradius" id="valor" name="valor" value="{$linha.valor}" />
                         </div>
-                        <div class="grid-6-12">
-                            <label>Orçamento aprovado:</label>
-                            <select class="txt bradius" name="orcamento" id="orcamento">
-                                <option value="" {if $linha.orcamentoAprovado == ''}selected="selected"{/if}>[Escolha]</option>
-                                <option value="Sim" {if $linha.orcamentoAprovado == 'Sim'}selected="selected"{/if}>Sim</option>
-                                <option value="Não" {if $linha.orcamentoAprovado != 'Sim'}selected="selected"{/if}>Não</option>
-                            </select>
-                        </div>
+                        {*<div class="grid-6-12">
+                        <label>Orçamento aprovado:</label>
+                        <select class="txt bradius" name="orcamento" id="orcamento">
+                        <option value="" {if $linha.orcamentoAprovado == ''}selected="selected"{/if}>[Escolha]</option>
+                        <option value="Sim" {if $linha.orcamentoAprovado == 'Sim'}selected="selected"{/if}>Sim</option>
+                        <option value="Não" {if $linha.orcamentoAprovado != 'Sim'}selected="selected"{/if}>Não</option>
+                        </select>
+                        </div>*}
                         {*                        <div class="grid-4-12">
                         <label>Forma de pagamento:</label>
                         <select class="txt bradius" name="formaDePagamento" id="formaDePagamento">
@@ -66,13 +66,14 @@
                         <label>Num. Parcelas:</label>
                         <input type="text" class="txt bradius" id="parcelamento" name="parcelamento" value="{$linha.parcelamento}" />
                         </div>
-                        *}                        <div class="grid-6-12">
+                        *}                        
+                        <div class="grid-6-12">
                             <label>Procedimento Realizado?</label>
                             <select class="txt bradius" name="realizado" id="realizado">
                                 <option value="" {if $linha.realizado == ""}selected="selected"{/if}>[Escolha]</option>
-                                <option value="Sim" {if $linha.realizado == "Sim"}selected="selected"{/if}>Sim</option>
-                                <option value="Não" {if $linha.realizado == "Não"}selected="selected"{/if}>Não</option>
-                                <option value="Em andamento" {if $linha.realizado == "Em andamento"}selected="selected"{/if}>Em andamento</option>
+                                <option value="1" {if $linha.realizado == "Sim"}selected="selected"{/if}>Sim</option>
+                                <option value="0" {if $linha.realizado == "Não"}selected="selected"{/if}>Não</option>
+                                <option value="2" {if $linha.realizado == "Em andamento"}selected="selected"{/if}>Em andamento</option>
                             </select>
                         </div>
                     </div>

@@ -17,6 +17,7 @@
         <script type="text/javascript">
             $(document).ready(function() {
                 $('#data').mask("99/99/9999");
+                //$('#valor').mask('9999,99');
 
                 $(function() {
                     $("#data").datepicker();
@@ -26,7 +27,7 @@
     </head>
     <body>
         <div id="container">
-            <form class="formee" id="frm_tratamento" method="post" enctype="multipart/form-data" target="_parent">
+            <form class="formee" id="frm_tratamento" method="post" action="Tratamento.php" target="_parent">
                 <h3>Procedimento</h3>
                 <hr />
                 <div id="formTratamento">
@@ -43,7 +44,7 @@
                         <label>Valor - R$:</label>
                         <input type="text" class="txt bradius" id="valor" name="valor" required />
                     </div>
-                    <div class="grid-6-12">
+                    {*<div class="grid-6-12">
                         <label>Orçamento aprovado:</label>
                         <select class="txt bradius" name="orcamento" id="orcamento" required>
                             <option value="">[Escolha]</option>
@@ -59,7 +60,7 @@
                             <option value="Não" selected="selected">Não</option>
                             <option value="Em andamento">Em anadamento</option>
                         </select>
-                    </div>
+                    </div>*}
                 </div>
                 <div id="botoes">
                     <a href="Tratamento.php?ptr={$prontuario}" class="cancel bradius" target="_parent">Cancelar</a>

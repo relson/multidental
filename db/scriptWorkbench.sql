@@ -152,14 +152,13 @@ CREATE TABLE IF NOT EXISTS `multidental`.`exames` (
 
 CREATE TABLE IF NOT EXISTS `multidental`.`tratamento` (
   `idTratamento` INT NOT NULL AUTO_INCREMENT,
-  `idPaciente` INT(11) NOT NULL,
+  `idPaciente` INT NOT NULL,
   `data` DATE NOT NULL,
   `procedimento` VARCHAR(255) NOT NULL,
-  `valor` DOUBLE NOT NULL,
-  `orcamentoAprovado` TINYINT NOT NULL DEFAULT 0,
-  `formaPagamento` TINYINT NOT NULL,
-  `parcelamento` INT NULL DEFAULT 1,
-  `status` TINYINT(1) NOT NULL DEFAULT 1,
+  `valor` FLOAT NOT NULL,
+  `orcamento` TINYINT NOT NULL DEFAULT 0,
+  `realizado` VARCHAR(45) NOT NULL,
+  `status` TINYINT NOT NULL DEFAULT 1,
   PRIMARY KEY (`idTratamento`),
   INDEX `fk_tratamento_paciente1_idx` (`idPaciente` ASC),
   CONSTRAINT `fk_tratamento_paciente1`

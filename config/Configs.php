@@ -37,9 +37,9 @@ class Configs {
     }
 
     public function valor2float($valor) {
-        $val = explode('.', $valor);
+        $val = explode(',', $valor);
         if (isset($val[1])) {
-            return $val[0] . ',' . $val[1];
+            return $val[0] . '.' . $val[1];
         } else {
             return $valor;
         }
