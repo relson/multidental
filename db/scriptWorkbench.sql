@@ -156,9 +156,12 @@ CREATE TABLE IF NOT EXISTS `multidental`.`tratamento` (
   `data` DATE NOT NULL,
   `procedimento` VARCHAR(255) NOT NULL,
   `valor` FLOAT NOT NULL,
-  `orcamento` TINYINT NOT NULL DEFAULT 0,
-  `realizado` VARCHAR(45) NOT NULL,
+  `orcamentoAprovado` TINYINT DEFAULT 0,
+  `DtAprovaOrcamento` DATETIME, 
+  `realizado` VARCHAR(45),
   `status` TINYINT NOT NULL DEFAULT 1,
+  `DtCadastro` DATETIME NOT NULL,
+  `pago` TINYINT DEFAULT 0,
   PRIMARY KEY (`idTratamento`),
   INDEX `fk_tratamento_paciente1_idx` (`idPaciente` ASC),
   CONSTRAINT `fk_tratamento_paciente1`
@@ -189,6 +192,36 @@ CREATE TABLE IF NOT EXISTS `multidental`.`agendamento` (
   CONSTRAINT `fk_agendamento_paciente1`
     FOREIGN KEY (`idPaciente`)
     REFERENCES `multidental`.`paciente` (`idPaciente`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+) ENGINE = InnoDB
+  DEFAULT CHARACTER SET = utf8;
+
+CREATE TABLE IF NOT EXISTS `multidental`.`categoriaFinanceiro` (
+  `idcategoria` INT NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`idcategoria`)
+) ENGINE = InnoDB
+  DEFAULT CHARACTER SET = utf8;
+
+CREATE TABLE IF NOT EXISTS `multidental`.`financeiro` (
+  `idFinanceiro` INT NOT NULL AUTO_INCREMENT,
+  `tipoMovimentacao` VARCHAR(255) NOT NULL,
+  `descricao` VARCHAR(255) NOT NULL,
+  `valor` FLOAT NOT NULL,
+  `idcategoria` INT NOT NULL,
+  `idPessoa` INT NOT NULL,
+  PRIMARY KEY (`idFinanceiro`),
+  INDEX `fk_financeiro_categoria_idx` (`idcategoria` ASC),
+  INDEX `fk_financeiro_pessoa_idx` (`idPessoa` ASC),
+  CONSTRAINT `fk_financeiro_categoria`
+    FOREIGN KEY (`idcategoria`)
+    REFERENCES `multidental`.`categoriaFinanceiro` (`idcategoria`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_financeiro_pessoa`
+    FOREIGN KEY (`idPessoa`)
+    REFERENCES `multidental`.`pessoa` (`idPessoa`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
 ) ENGINE = InnoDB

@@ -7,8 +7,8 @@
         <div id="menuTratamento">
             <p>Financeiro</p>
 
-            <a href="" class="btn btnAction bradius">Lançar Pagamento</a>
-            <a href="" class="btn btnAction bradius">Lançar Despesa</a>
+            <a href="Financeiro.php?pag=true" class="btn btnAction bradius lancaPagamento" data-fancybox-type="iframe">Lançar Pagamento</a>
+            <a href="" class="btn btnAction bradius fancybox" data-fancybox-type="iframe">Lançar Despesa</a>
             <label for="fromData">Filtra de</label>
             <input type="text" class="txt bradius" name="fromData" id="fromData" placeholder="__/__/____" />
             <label for="toData">até</label>

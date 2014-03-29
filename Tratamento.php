@@ -8,6 +8,7 @@ $sm->assign("usuario", 'Talita Lima');
 $tratamento = new Tratamento();
 $tratamentoDAO = new TratamentoDAO();
 $paciente = new PacienteDAO();
+$data = new Configs();
 
 if (isset($_POST['acao'])) {
     $acao = $_POST['acao'];
@@ -20,11 +21,12 @@ if (isset($_POST['acao'])) {
                     $idPaciente = $_POST['paciente'];
 
                     $tratamento->setIdPaciente($idPaciente);
-                    $tratamento->setData($_POST['data']);
+                    $tratamento->setData($data->date2US($_POST['data']));
                     $tratamento->setProcedimento($_POST['procedimento']);
                     $tratamento->setValor($tratamento->convertValor($_POST['valor']));
 //                    $tratamento->setOrcamentoAprovado($_POST['orcamento']);
-                    $tratamento->setRealizado($_POST['realizado']);
+//                    $tratamento->setRealizado($_POST['realizado']);
+                    $tratamento->setDtCadastro(date("Y-m-d H:i:s"));
 
                     $tratamentoDAO->insert($tratamento);
 
@@ -35,17 +37,17 @@ if (isset($_POST['acao'])) {
             }
             break;
         case 'atualizar':
-            if (isset($_POST['data']) and isset($_POST['procedimento']) and isset($_POST['valor']) and isset($_POST['orcamento'])) {
+            if (isset($_POST['data']) and isset($_POST['procedimento']) and isset($_POST['valor'])) {
 
-                if ($_POST['data'] != '' and $_POST['procedimento'] != '' and $_POST['valor'] != '' and $_POST['orcamento'] != '') {
+                if ($_POST['data'] != '' and $_POST['procedimento'] != '' and $_POST['valor']) {
                     $idPaciente = $_POST['paciente'];
                     $idTratamento = $_POST['tratamento'];
                     
                     $tratamento->setIdPaciente($idPaciente);
-                    $tratamento->setData($_POST['data']);
+                    $tratamento->setData($data->date2US($_POST['data']));
                     $tratamento->setProcedimento($_POST['procedimento']);
                     $tratamento->setValor($tratamento->convertValor($_POST['valor']));
-                    $tratamento->setOrcamentoAprovado($_POST['orcamento']);
+//                    $tratamento->setOrcamentoAprovado($_POST['orcamento']);
 //                    $tratamento->setFormaPagamento($_POST['formaDePagamento']);
 //                    if ($_POST['parcelamento'] == '') {
 //                        $tratamento->setParcelamento('1');

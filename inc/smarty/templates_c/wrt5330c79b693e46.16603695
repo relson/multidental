@@ -1,0 +1,104 @@
+<?php /* Smarty version Smarty-3.1.14, created on 2014-03-24 21:02:35
+         compiled from ".\view\lancarpagamento.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:298235330c56df1eae3-25786519%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'f3f98875b762d5353f9a20bb7b836242bd26d49f' => 
+    array (
+      0 => '.\\view\\lancarpagamento.tpl',
+      1 => 1395705363,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '298235330c56df1eae3-25786519',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_5330c56e01cb53_65231046',
+  'variables' => 
+  array (
+    'orcamento' => 0,
+    'linha' => 0,
+  ),
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_5330c56e01cb53_65231046')) {function content_5330c56e01cb53_65231046($_smarty_tpl) {?><!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Multi Dental</title>
+        <meta charset="UTF-8">
+        <link type="text/css" rel="stylesheet" href="./css/style_tratamento.css" />
+        <link type="text/css" rel="stylesheet" href="./js/plugins/jQuery-ui/css/start/jquery-ui-start.css" />
+        <link type="text/css" rel="stylesheet" href="./inc/Formee/css/formee-style.css" />
+        <link type="text/css" rel="stylesheet" href="./inc/Formee/css/formee-structure.css" />
+
+        <script type="text/javascript" src="./js/lib/jquery-2.0.3.min.js"></script>
+        <script type="text/javascript" src="./js/plugins/jquery.maskedinput.min.js"></script>
+        <script type="text/javascript" src="./js/plugins/jquery.validate.js"></script>
+        <script type="text/javascript" src="./js/plugins/jQuery-ui/js/jquery.ui.datepicker-pt-BR.js"></script>
+        <script type="text/javascript" src="./js/plugins/jQuery-ui/js/jquery-ui.js"></script>
+        <script type="text/javascript" src="./inc/Formee/js/formee.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#data').mask("99/99/9999");
+                //$('#valor').mask('9999,99');
+
+                $(function() {
+                    $("#data").datepicker();
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="container">
+            <form class="formee" method="post" action="../Financeiro.php" target="_parent">
+                <h3>Lançar Pagamento</h3>
+                <hr/>
+
+                <div id="">
+
+                    <div class="grid-11-12">
+                        <label>Paciente:</label>
+                        <input type="text" class="txt bradius" id="pacientePagamento" name="pacientePagamento" required />
+                    </div>
+                    <div class="grid-1-12" id="selecionarPaciente">
+                        <a href="Financeiro.php?pac=true" data-fancybox-type="iframe"><img src="./css/image/add-paciente.png" width="32" height="32" alt="Selecionar Paciente" title="Selecionar Paciente" /></a>
+                    </div>
+
+                    <div class="grid-12-12">
+
+                        <table>
+
+                            <tr id="rotulo">
+                                <td id="data">Data</td>
+                                <td id="servico">Serviço</td>
+                                <td id="valor">Valor - R$</td>
+                            </tr>
+                            <?php  $_smarty_tpl->tpl_vars['linha'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['linha']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['orcamento']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['linha']->key => $_smarty_tpl->tpl_vars['linha']->value){
+$_smarty_tpl->tpl_vars['linha']->_loop = true;
+?>
+                                <tr onMouseOver="javascript:this.style.backgroundColor = '#d2d2d2'" onMouseOut="javascript:this.style.backgroundColor = ''">
+                                    <td id="data"><?php echo $_smarty_tpl->tpl_vars['linha']->value['data'];?>
+</td>
+                                    <td id="servico"><a href="" data-fancybox-type="iframe"><?php echo $_smarty_tpl->tpl_vars['linha']->value['servico'];?>
+</a></td>
+                                    <td id="valor"><?php echo $_smarty_tpl->tpl_vars['linha']->value['valor'];?>
+</td>
+                                </tr>
+                            <?php } ?>
+                        </table>
+
+                    </div>
+
+                </div>
+
+        </div>
+
+    </form>
+</div>
+</body>
+</html><?php }} ?>

@@ -1,6 +1,11 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
 /* 
-    Created on : 26/10/2013, 12:07:58
-    Author     : Igor Lula Ribeiro
+    Created on : 24/03/2014, 21:23:08
+    Author     : Igor Lula
 */
 
 * {
@@ -25,11 +30,11 @@ hr {
     border-top: thin solid #e0e0e0;
 }
 
-select {
+/*select {
     height: 30px;
     width: 180px;
     font: 16px "Helvetica Neue",Helvetica,Arial,sans-serif;
-}
+}*/
 
 #selecionarPaciente {
     margin-top: 5%;
@@ -49,6 +54,47 @@ select {
     text-decoration: none;
     color: #FFF;
     background: #45bdf9;
+}
+
+/*ESTILOS PARA A TABELA*/
+table {
+    width: 100%;
+    border-spacing: 0px;
+    border-collapse: collapse;
+    margin: 0 auto;
+    margin-top: 10px;
+    font-size: 10pt;
+}
+
+table td {
+    border-bottom: thin solid #09F;
+    padding: 5px 10px 5px 10px;
+}
+
+table tr[id="rotulo"] {
+    font-weight: bold;
+    font: 18px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    background-color: #45bdf9;
+    color: #fff;
+}
+
+table td[id="data"], td[id="valor"], td[id="valorTotal"] {
+    width: 20%;
+    text-align: center;
+}
+
+table td[id="servico"]  {
+    width: 50%;
+    text-align: left;
+}
+
+table td[id="valorTotal"] {
+    font-weight: bold;
+}
+
+table td[id="total"], td[id="valorTotal"] {
+    text-align: center;
+    background-color: #cecece;
 }
 
 .btn {

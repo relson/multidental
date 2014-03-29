@@ -10,26 +10,30 @@ class Tratamento extends PDOConnectionFactory {
     private $procedimento;
     private $valor;
     private $orcamentoAprovado;
+    private $DtAprovaOrcamento;
     private $formaPagamento;
     private $parcelamento;
     private $realizado;
     private $status;
+    private $DtCadastro;
 
     public function __construct() {
         
     }
 
-    public function Tratamento($idTratamento, $idPaciente, $data, $procedimento, $valor, $orcamentoAprovado, $formaPagamento, $parcelamento, $realizado, $status) {
+    public function Tratamento($idTratamento, $idPaciente, $data, $procedimento, $valor, $orcamentoAprovado, $DtAprovaOrcamento, $formaPagamento, $parcelamento, $realizado, $status, $DtCadastro) {
         self::setIdTratamento($idTratamento);
         self::setIdPaciente($idPaciente);
         self::setData($data);
         self::setProcedimento($procedimento);
         self::setValor($valor);
         self::setOrcamentoAprovado($orcamentoAprovado);
+        self::setDtAprovaOrcamento($DtAprovaOrcamento);
         self::setFormaPagamento($formaPagamento);
         self::setParcelamento($parcelamento);
         self::setRealizado($realizado);
         self::setStatus($status);
+        self::setDtCadastro($DtCadastro);
     }
 
     public function getIdTratamento() {
@@ -59,6 +63,15 @@ class Tratamento extends PDOConnectionFactory {
     public function getOrcamentoAprovado() {
         return $this->orcamentoAprovado;
     }
+    
+    public function getDtAprovaOrcamento() {
+        return $this->DtAprovaOrcamento;
+    }
+
+    public function getDtCadastro() {
+        return $this->DtCadastro;
+    }
+
 
     public function getFormaPagamento() {
         return $this->formaPagamento;
@@ -106,6 +119,14 @@ class Tratamento extends PDOConnectionFactory {
 
     public function setOrcamentoAprovado($orcamentoAprovado) {
         $this->orcamentoAprovado = $orcamentoAprovado;
+    }
+    
+    public function setAprovaOrcamento($DtAprovaOrcamento) {
+        $this->DtAprovaOrcamento = $DtAprovaOrcamento;
+    }
+    
+    public function setDtCadastro($DtCadastro) {
+        $this->DtCadastro = $DtCadastro;
     }
 
     public function setFormaPagamento($formaPagamento) {

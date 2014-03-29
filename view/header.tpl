@@ -72,6 +72,17 @@
                     openEffect: 'fade',
                     closeEffect: 'fade'
                 });
+                
+                $('.lancaPagamento').fancybox({
+                    maxWidth: 800,
+                    maxHeight: 600,
+                    fitToView: false,
+                    autoSize: false,
+                    closeClick: false,
+                    openEffect: 'fade',
+                    closeEffect: 'fade',
+                    width: '500px'
+                });
 
                 $("tr.click").click(function() {
                     $this = $(this);
