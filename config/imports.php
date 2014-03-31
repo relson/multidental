@@ -11,6 +11,7 @@ require_once 'C:/Dropbox/www/multidental/model/class/Exame.class.php';
 require_once 'C:/Dropbox/www/multidental/model/class/Tratamento.class.php';
 require_once 'C:/Dropbox/www/multidental/model/class/Horarios.class.php';
 require_once 'C:/Dropbox/www/multidental/model/class/Agendamento.class.php';
+require_once 'C:/Dropbox/www/multidental/model/class/Financeiro.class.php';
 
 //requires da model DAO
 require_once 'C:/Dropbox/www/multidental/model/dao/AnamneseDAO.class.php';
@@ -23,3 +24,4 @@ require_once 'C:/Dropbox/www/multidental/model/dao/ExameDAO.class.php';
 require_once 'C:/Dropbox/www/multidental/model/dao/TratamentoDAO.class.php';
 require_once 'C:/Dropbox/www/multidental/model/dao/HorariosDAO.class.php';
 require_once 'C:/Dropbox/www/multidental/model/dao/AgendamentoDAO.class.php';
+require_once 'C:/Dropbox/www/multidental/model/dao/FinanceiroDAO.class.php';

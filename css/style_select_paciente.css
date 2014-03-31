@@ -21,6 +21,11 @@ body {
 div#conteudo {
     margin: 0 auto;
     text-align: center;
+    margin-top: 30px;
+}
+
+div#conteudo select {
+    height: 30px;
 }
 
 h3 {
@@ -76,16 +81,20 @@ table tr[id="rotulo"] {
     color: #FFF;
 }
 
-#botao {
-    text-align: center;
+#botoes {
     width: 500px;
-    margin: 35px auto;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 25px;
 }
 
-#botao a {
+#botoes a {
+    width: 100px;
+    margin-right: 10px;
+    padding: 6px 18px;
+    text-decoration: none;
     color: #FFF;
-    margin: 0 10px;
-    padding: 10px 30px;
+    background: #45bdf9;
 }
 
 /*Estilos das classes*/

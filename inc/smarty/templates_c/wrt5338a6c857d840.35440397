@@ -1,0 +1,165 @@
+<?php /* Smarty version Smarty-3.1.14, created on 2014-03-30 20:20:40
+         compiled from ".\view\registraPagamento.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:97545338a44b6d4844-18353334%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'af51d55560448d891379b6e7e78ad76fa03043ad' => 
+    array (
+      0 => '.\\view\\registraPagamento.tpl',
+      1 => 1396221637,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '97545338a44b6d4844-18353334',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_5338a44b715302_48048130',
+  'variables' => 
+  array (
+    'nome' => 0,
+    'total' => 0,
+    'formas' => 0,
+    'linha' => 0,
+  ),
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_5338a44b715302_48048130')) {function content_5338a44b715302_48048130($_smarty_tpl) {?><!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Multi Dental</title>
+        <meta charset="UTF-8">
+        <link type="text/css" rel="stylesheet" href="./css/registraPagamento.css"/>
+        <link type="text/css" rel="stylesheet" href="./inc/Formee/css/formee-style.css"/>
+        <link type="text/css" rel="stylesheet" href="./inc/Formee/css/formee-structure.css" />
+        <script type="text/javascript" src="../inc/Formee/js/formee.js"></script>
+        <style>
+            #boleto, #cartao, #cheque, #deposito, #dinheiro, #plano {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container formee">
+            <h3>Registrar Pagamento</h3>
+            <hr/>
+            <div class="grid-8-12">
+                <label for="nomePaciente">Paciente:</label>
+                <input class="txt bradius" name="nomePaciente" value="<?php echo $_smarty_tpl->tpl_vars['nome']->value;?>
+" readonly="true"/>
+            </div>
+            <div class="grid-4-12">
+                <label for="valorTotal">Total: R$</label>
+                <input class="txt bradius" name="valorTotal" value="<?php echo $_smarty_tpl->tpl_vars['total']->value;?>
+,00" readonly="true"/>
+            </div>
+            <div class="grid-8-12">
+                <label for="formaPagamento">Forma de Pagamento:</label>
+                <select class="txt bradius" name="formaPagamento" id="formapagamento">
+                    <option value="">Selecione</option>
+                    <?php  $_smarty_tpl->tpl_vars['linha'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['linha']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['formas']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['linha']->key => $_smarty_tpl->tpl_vars['linha']->value){
+$_smarty_tpl->tpl_vars['linha']->_loop = true;
+?>
+                        <option value="<?php echo $_smarty_tpl->tpl_vars['linha']->value['idformapagamento'];?>
+"><?php echo $_smarty_tpl->tpl_vars['linha']->value['descricao'];?>
+</option>
+                    <?php } ?>
+                </select>
+            </div>
+            <div class="grid-4-12">
+                <label for="valorPago">Valor: R$</label>
+                <input class="txt bradius" name="valorPago"/>
+            </div>
+
+            <div id="boleto">
+                Boleto
+            </div>
+
+            <div id="cartao">
+                Cartão
+            </div>
+
+            <div id="cheque">
+                Cheque
+            </div>
+
+            <div id="deposito">
+                Deposito
+            </div>
+
+            <div id="dinheiro">
+                Dinheiro
+            </div>
+
+            <div id="plano">
+                Plano
+            </div>
+
+            <div id="botoes">
+
+            </div>
+        </div>
+        <script type="text/javascript" src="../js/lib/jquery-2.0.3.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                var elem = document.getElementById("formapagamento");
+                elem.onchange = function() {
+                    var divBoleto = document.getElementById("boleto");
+                    var divCartao = document.getElementById("cartao");
+                    var divCheque = document.getElementById("cheque");
+                    var divDeposito = document.getElementById("deposito");
+                    var divDinheiro = document.getElementById("dinheiro");
+                    var divPlano = document.getElementById("plano");
+                    //hiddenDiv.style.display = (this.value === "") ? "none" : "block";
+                    if (elem.value === "1") {
+                        divBoleto.style.display = "block";
+                        divCartao.style.display = "none";
+                        divCheque.style.display = "none";
+                        divDeposito.style.display = "none";
+                        divDinheiro.style.display = "none";
+                        divPlano.style.display = "none";
+                    } else if (this.value === "2") {
+                        divBoleto.style.display = "none";
+                        divCartao.style.display = "block";
+                        divCheque.style.display = "none";
+                        divDeposito.style.display = "none";
+                        divDinheiro.style.display = "none";
+                        divPlano.style.display = "none";
+                    } else if (this.value === "3") {
+                        divBoleto.style.display = "none";
+                        divCartao.style.display = "none";
+                        divCheque.style.display = "block";
+                        divDeposito.style.display = "none";
+                        divDinheiro.style.display = "none";
+                        divPlano.style.display = "none";
+                    } else if (this.value === "4") {
+                        divBoleto.style.display = "none";
+                        divCartao.style.display = "none";
+                        divCheque.style.display = "none";
+                        divDeposito.style.display = "block";
+                        divDinheiro.style.display = "none";
+                        divPlano.style.display = "none";
+                    } else if (this.value === "5") {
+                        divBoleto.style.display = "none";
+                        divCartao.style.display = "none";
+                        divCheque.style.display = "none";
+                        divDeposito.style.display = "none";
+                        divDinheiro.style.display = "block";
+                        divPlano.style.display = "none";
+                    } else if (this.value === "6") {
+                        divBoleto.style.display = "none";
+                        divCartao.style.display = "none";
+                        divCheque.style.display = "none";
+                        divDeposito.style.display = "none";
+                        divDinheiro.style.display = "none";
+                        divPlano.style.display = "block";
+                    }
+                };
+            });
+        </script>
+    </body>
+</html><?php }} ?>

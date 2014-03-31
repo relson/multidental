@@ -9,13 +9,25 @@ $sm->assign("usuario", 'Talita Lima');
 $config = new Configs();
 $pacienteDAO = new PacienteDAO();
 $tratamentoDAO = new TratamentoDAO();
+$financeiroDAO = new FinanceiroDAO();
 
 $mes = date("M");
 $mes_extenso = $config->mesExtenso();
 
 $mespt = $mes_extenso[$mes] . '/' . date('Y');
 
-if (isset($_GET['pag']) && $_GET['pag']) {
+if (isset($_POST['acao'])) {
+    $acao = $_POST['acao'];
+    
+    switch ($acao) {
+        case 'registraPagamento':
+            
+//            VALIDA E INSTANCIA OS DADOS PARA PERSISTIR NO BANCO
+            break;
+        default:
+            break;
+    }
+} else if (isset($_GET['pag']) && $_GET['pag']) {
     $pacientes = $pacienteDAO->search("%");
 
     $sm->assign("pacientes", $pacientes);
@@ -54,20 +66,36 @@ if (isset($_GET['pag']) && $_GET['pag']) {
           </tr>';
 } else if (isset($_POST['idP'])) {
     $id = $_POST['paciente'];
-    
+    $sm->assign("idPaciente", $id);
+
     $dados = $tratamentoDAO->selectOrcamento($id);
     $total = $tratamentoDAO->selectTotal($id);
-    
-    for ($i=0; $i < sizeof($dados); $i++) {
+
+    for ($i = 0; $i < sizeof($dados); $i++) {
         $dados[$i]['DtCadastro'] = $config->date2BR(substr($dados[$i]['DtCadastro'], 0, 10));
     }
-    
+
     $sm->assign("nome", $dados[0]['nome']);
     $sm->assign("dados", $dados);
-    
+
     $sm->assign("total", $total[0]['total']);
 
     $sm->display('lancarPagamento.tpl');
+    
+} else if (isset($_GET['idrp'])) {
+    $id = $_GET['idrp'];
+    
+    $dados = $tratamentoDAO->selectOrcamento($id);
+    $total = $tratamentoDAO->selectTotal($id);
+    $formas = $tratamentoDAO->selectFormaPagamento();
+    $cartao = $tratamentoDAO->selectBandeiraCartao();
+    
+    $sm->assign("nome", $dados[0]['nome']);
+    $sm->assign("total", $total[0]['total']);
+    $sm->assign("formas", $formas);
+    $sm->assign("bandeiras", $cartao);
+    
+    $sm->display("registraPagamento.tpl");
 } else {
     $sm->assign("mes", $mespt);
 

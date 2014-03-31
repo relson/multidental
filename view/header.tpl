@@ -81,7 +81,8 @@
                     closeClick: false,
                     openEffect: 'fade',
                     closeEffect: 'fade',
-                    width: '500px'
+                    width: '500px',
+                    padding: '0'
                 });
 
                 $("tr.click").click(function() {

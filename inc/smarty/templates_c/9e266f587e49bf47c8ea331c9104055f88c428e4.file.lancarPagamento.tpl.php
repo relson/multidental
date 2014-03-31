@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-03-29 16:39:38
+<?php /* Smarty version Smarty-3.1.14, created on 2014-03-30 10:48:17
          compiled from ".\view\lancarPagamento.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:286815337217aa73783-91709756%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:9520533820a1be46b0-32073700%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '9e266f587e49bf47c8ea331c9104055f88c428e4' => 
     array (
       0 => '.\\view\\lancarPagamento.tpl',
-      1 => 1396121974,
+      1 => 1396187294,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '286815337217aa73783-91709756',
+  'nocache_hash' => '9520533820a1be46b0-32073700',
   'function' => 
   array (
   ),
@@ -21,12 +21,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'dados' => 0,
     'linha' => 0,
     'total' => 0,
+    'idPaciente' => 0,
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_5337217aab3143_94452849',
+  'unifunc' => 'content_533820a1c260f4_79068019',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5337217aab3143_94452849')) {function content_5337217aab3143_94452849($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_533820a1c260f4_79068019')) {function content_533820a1c260f4_79068019($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="pt-br">
     <head>
         <title>Multi Dental</title>
@@ -51,9 +52,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     </div>
 
                     <div class="grid-12-12 txtHint">
-
                         <table>
-
                             <tr id="rotulo">
                                 <td id="data">Data</td>
                                 <td id="servico">Serviço</td>
@@ -80,15 +79,14 @@ $_smarty_tpl->tpl_vars['linha']->_loop = true;
 ,00</td>
                             </tr>
                         </table>
-
                     </div>
                 </div>
                 <div id="botoes">
                     <hr/>
                     <a href="Financeiro.php" class="cancel bradius" target="_parent">Cancelar</a>
-                    <input type="submit" name="btn_cad" class="btn bradius" value="Registrar" />
+                    <a href="Financeiro.php?idrp=<?php echo $_smarty_tpl->tpl_vars['idPaciente']->value;?>
+"class="btn bradius">Registrar</a>
                     <input type="hidden" name="idPaciente" value="" />
-                    <input type="hidden" name="acao" value="registrar" />
                 </div>
         </div>
         <script type="text/javascript" src="./js/lib/jquery-2.0.3.min.js"></script>

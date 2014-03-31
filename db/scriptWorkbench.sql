@@ -199,7 +199,7 @@ CREATE TABLE IF NOT EXISTS `multidental`.`agendamento` (
 
 CREATE TABLE IF NOT EXISTS `multidental`.`categoriaFinanceiro` (
   `idcategoria` INT NOT NULL AUTO_INCREMENT,
-  `nome` VARCHAR(255) NOT NULL,
+  `nome` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idcategoria`)
 ) ENGINE = InnoDB
   DEFAULT CHARACTER SET = utf8;
@@ -224,5 +224,19 @@ CREATE TABLE IF NOT EXISTS `multidental`.`financeiro` (
     REFERENCES `multidental`.`pessoa` (`idPessoa`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
+) ENGINE = InnoDB
+  DEFAULT CHARACTER SET = utf8;
+
+CREATE TABLE IF NOT EXISTS `multidental`.`formapagamento` (
+  `idformapagamento` INT NOT NULL AUTO_INCREMENT,
+  `descricao` VARCHAR(45),
+  PRIMARY KEY (`idformapagamento`)
+) ENGINE = InnoDB
+  DEFAULT CHARACTER SET = utf8;
+
+CREATE TABLE  IF NOT EXISTS `multidental`.`bandeiraCartao` (
+  `idbandeiraCartao` INT NOT NULL AUTO_INCREMENT,
+  `descricao` VARCHAR(45),
+  PRIMARY KEY (`idbandeiraCartao`)
 ) ENGINE = InnoDB
   DEFAULT CHARACTER SET = utf8;
