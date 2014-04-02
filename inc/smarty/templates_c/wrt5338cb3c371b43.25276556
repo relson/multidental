@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-03-30 22:56:14
+<?php /* Smarty version Smarty-3.1.14, created on 2014-03-30 22:56:12
          compiled from ".\view\registraPagamento.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:167635338cb3e6e1a29-40318347%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:114325338c3225f6075-55592642%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,10 +11,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '167635338cb3e6e1a29-40318347',
+  'nocache_hash' => '114325338c3225f6075-55592642',
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_5338c32263cd11_98143245',
   'variables' => 
   array (
     'nome' => 0,
@@ -24,10 +26,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'bandeiras' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_5338cb3e729972_08528945',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5338cb3e729972_08528945')) {function content_5338cb3e729972_08528945($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_5338c32263cd11_98143245')) {function content_5338c32263cd11_98143245($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="pt-br">
     <head>
         <title>Multi Dental</title>

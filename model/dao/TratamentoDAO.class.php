@@ -146,11 +146,15 @@ class TratamentoDAO extends Tratamento {
         }
     }
 
-    public function selectFormaPagamento() {
+    public function selectFormaPagamento($query = null) {
         try {
+            if ($query === NULL) {
             //query de select
             $stmt = $this->conexao->prepare("SELECT * FROM formapagamento");
-
+            } else {
+                //query de select
+            $stmt = $this->conexao->prepare($query);
+            }
             //execução da query
             $stmt->execute();
 

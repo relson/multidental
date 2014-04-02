@@ -84,6 +84,18 @@
                     width: '500px',
                     padding: '0'
                 });
+                
+                $('.lancaDespesa').fancybox({
+                    maxWidth: 800,
+                    maxHeight: 600,
+                    fitToView: false,
+                    autoSize: false,
+                    closeClick: false,
+                    openEffect: 'fade',
+                    closeEffect: 'fade',
+                    width: '505px',
+                    padding: '0'
+                });
 
                 $("tr.click").click(function() {
                     $this = $(this);

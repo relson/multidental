@@ -3,12 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Dropbox/www/multidental/model/dao/PacienteDAO.class.php</file>
+            <file>file:/C:/Dropbox/www/multidental/view/registraPagamento.tpl</file>
             <file>file:/C:/Dropbox/www/multidental/view/lancarPagamento.tpl</file>
-            <file>file:/C:/Dropbox/www/multidental/css/style_lancamento.css</file>
             <file>file:/C:/Dropbox/www/multidental/Financeiro.php</file>
-            <file>file:/C:/Dropbox/www/multidental/model/dao/TratamentoDAO.class.php</file>
-            <file>file:/C:/Dropbox/www/multidental/view/financeiro.tpl</file>
             <file>file:/C:/Dropbox/www/multidental/view/selecionarPacienteFinanceiro.tpl</file>
         </group>
     </open-files>

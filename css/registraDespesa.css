@@ -1,0 +1,102 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 01/04/2014, 20:35:08
+    Author     : Igor Lula
+*/
+
+* {
+    list-style: none;
+    outline: none;
+}
+
+body {
+    margin: 0;
+    font: 16px "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+div#container {
+    width: 500px;
+}
+
+h3 {
+    margin: .5em 1% .8%;
+    padding: 0.5% 0.5% 0.8%;
+    font-size: 2em;
+    line-height: 1.2em;
+    letter-spacing: -.035em;
+    color: #2b2b2b;
+    font-weight: normal;
+    text-align: center;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    border-top: thin solid #e0e0e0;
+}
+
+#selecionarPaciente {
+    margin-top: 5%;
+}
+
+#botoes {
+    width: 500px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+
+#botoes a {
+    width: 100px;
+    margin-right: 10px;
+    padding: 6px 18px;
+    text-decoration: none;
+    color: #FFF;
+    background: #45bdf9;
+}
+
+.btn {
+    color: #FFF;
+    border: none;
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 5px;
+    margin: 5px;
+    margin-right: 10px;
+    background: #45bdf9;
+}
+
+.bradius {
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+.btn:hover, #botoes a:hover {
+    background: -moz-linear-gradient(top, #459DFC 30%, #4589FC);
+    background: -webkit-linear-gradient(top, #459DFC 30%, #4589FC);
+}
+
+.txt {
+    border: none;
+    border: thin solid #c0c0c0; /*#e2e2e2;*/
+}
+
+.txt:focus {
+    border: thin solid #09F;
+    box-shadow: 0 2px 10px #45bdf9;
+    -webkit-box-shadow: 0 2px 10px #45bdf9;
+    -moz-box-shadow: 0 2px 10px #45bdf9;
+}
+
+.txt, .txt:focus {
+    transition: all 5s linear;
+    -webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+}

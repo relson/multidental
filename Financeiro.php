@@ -27,7 +27,7 @@ if (isset($_POST['acao'])) {
         default:
             break;
     }
-} else if (isset($_GET['pag']) && $_GET['pag']) {
+} else if (isset($_GET['pag']) and $_GET['pag']) {
     $pacientes = $pacienteDAO->search("%");
 
     $sm->assign("pacientes", $pacientes);
@@ -96,6 +96,14 @@ if (isset($_POST['acao'])) {
     $sm->assign("bandeiras", $cartao);
     
     $sm->display("registraPagamento.tpl");
+    
+} else if (isset($_GET['des']) and $_GET['des']) {
+    $query = 'SELECT * FROM formapagamento WHERE idformapagamento <> 5'; 
+    $formas = $tratamentoDAO->selectFormaPagamento($query);
+    
+    $sm->assign("formas", $formas);
+    
+    $sm->display("registraDespesa.tpl");
 } else {
     $sm->assign("mes", $mespt);
 

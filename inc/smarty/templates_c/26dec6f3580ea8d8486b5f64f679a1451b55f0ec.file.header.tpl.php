@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-03-30 21:48:30
+<?php /* Smarty version Smarty-3.1.14, created on 2014-04-01 20:50:13
          compiled from "view\header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2389452825f766de042-19625579%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '26dec6f3580ea8d8486b5f64f679a1451b55f0ec' => 
     array (
       0 => 'view\\header.tpl',
-      1 => 1396226906,
+      1 => 1396396212,
       2 => 'file',
     ),
   ),
@@ -103,6 +103,18 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     openEffect: 'fade',
                     closeEffect: 'fade',
                     width: '500px',
+                    padding: '0'
+                });
+                
+                $('.lancaDespesa').fancybox({
+                    maxWidth: 800,
+                    maxHeight: 600,
+                    fitToView: false,
+                    autoSize: false,
+                    closeClick: false,
+                    openEffect: 'fade',
+                    closeEffect: 'fade',
+                    width: '505px',
                     padding: '0'
                 });
 
