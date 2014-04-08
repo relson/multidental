@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-03-30 22:56:14
+<?php /* Smarty version Smarty-3.1.14, created on 2014-04-07 20:39:49
          compiled from ".\view\registraPagamento.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:167635338cb3e6e1a29-40318347%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'af51d55560448d891379b6e7e78ad76fa03043ad' => 
     array (
       0 => '.\\view\\registraPagamento.tpl',
-      1 => 1396229116,
+      1 => 1396913984,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_5338cb3e729972_08528945',
   'variables' => 
   array (
     'nome' => 0,
@@ -22,10 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'formas' => 0,
     'linha' => 0,
     'bandeiras' => 0,
+    'paciente' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_5338cb3e729972_08528945',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5338cb3e729972_08528945')) {function content_5338cb3e729972_08528945($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="pt-br">
@@ -44,7 +45,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     </head>
     <body>
         <div id="container" class="formee">
-            <form method="post" action="Financeiro.php" enctype="multipart/form-data">
+            <form method="post" action="Financeiro.php" enctype="multipart/form-data" target="_parent">
                 <h3>Registrar Pagamento</h3>
                 <hr/>
                 <div class="grid-8-12">
@@ -94,7 +95,7 @@ $_smarty_tpl->tpl_vars['linha']->_loop = true;
 foreach ($_from as $_smarty_tpl->tpl_vars['linha']->key => $_smarty_tpl->tpl_vars['linha']->value){
 $_smarty_tpl->tpl_vars['linha']->_loop = true;
 ?>
-                                <option value="<?php echo $_smarty_tpl->tpl_vars['linha']->value['idbandeiracartao'];?>
+                                <option value="<?php echo $_smarty_tpl->tpl_vars['linha']->value['idbandeiraCartao'];?>
 "><?php echo $_smarty_tpl->tpl_vars['linha']->value['descricao'];?>
 </option>
                             <?php } ?>
@@ -159,6 +160,8 @@ $_smarty_tpl->tpl_vars['linha']->_loop = true;
                     <a href="Financeiro.php" class="btn bradius" target="_parent">Cancelar</a>
                     <input type="submit" class="btn bradius" value="Salvar"/>
                     <input type="hidden" name="acao" value="registraPagamento"/>
+                    <input type="hidden" name="paciente" value="<?php echo $_smarty_tpl->tpl_vars['paciente']->value;?>
+"/>
                 </div>
             </form>
         </div>

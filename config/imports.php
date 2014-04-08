@@ -12,6 +12,11 @@ require_once 'C:/Dropbox/www/multidental/model/class/Tratamento.class.php';
 require_once 'C:/Dropbox/www/multidental/model/class/Horarios.class.php';
 require_once 'C:/Dropbox/www/multidental/model/class/Agendamento.class.php';
 require_once 'C:/Dropbox/www/multidental/model/class/Financeiro.class.php';
+require_once 'C:/Dropbox/www/multidental/model/class/cartao.class.php';
+require_once 'C:/Dropbox/www/multidental/model/class/cheque.class.php';
+require_once 'C:/Dropbox/www/multidental/model/class/DepositoBancario.class.php';
+require_once 'C:/Dropbox/www/multidental/model/class/PlanoDentario.class.php';
+require_once 'C:/Dropbox/www/multidental/model/class/Transferencia.class.php';
 
 //requires da model DAO
 require_once 'C:/Dropbox/www/multidental/model/dao/AnamneseDAO.class.php';

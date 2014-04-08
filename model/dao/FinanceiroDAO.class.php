@@ -16,15 +16,29 @@ require_once 'C:/Dropbox/www/multidental/model/class/Financeiro.class.php';
 class FinanceiroDAO extends Financeiro {
 
     private $conexao;
-    private $stmt;
 
     public function TratamentoDAO() {
-        $this->conexao = new PDOConnectionFactory();
         $this->conexao = PDOConnectionFactory::getConnection();
     }
 
     public function insert($financeiro) {
-        
+        try {
+            //query de insert
+            $stmt = $this->conexao->prepare("INSERT INTO financeiro (valor, DtPagamento, idcategoria, idPaciente, idTipoMovimentacao) VALUES (?, ?, ?, ?, ?)");
+            
+            $stmt->bindValue(1, $financeiro->getValor());
+            $stmt->bindValue(2, $financeiro->getDtPagamento);
+            $stmt->bindValue(3, $financeiro->getIdCategoria());
+            $stmt->bindValue(4, $financeiro->getIdPaciente());
+            $stmt->bindValue(5, $financeiro->getIdTipoMovimentacao());
+            
+            //execução da query de insert
+            $stmt->execute();
+            
+            $this->close();
+        } catch (PDOException $e) {
+            echo 'ERRO: '.$e->getMessage();
+        }
     }
 
     public function update($financeiro, $idFinanceiro) {

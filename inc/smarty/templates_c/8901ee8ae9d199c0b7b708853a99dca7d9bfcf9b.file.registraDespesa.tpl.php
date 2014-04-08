@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-04-01 20:48:51
+<?php /* Smarty version Smarty-3.1.14, created on 2014-04-01 21:26:53
          compiled from ".\view\registraDespesa.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:3991533b4d55d6b1e2-14513396%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8901ee8ae9d199c0b7b708853a99dca7d9bfcf9b' => 
     array (
       0 => '.\\view\\registraDespesa.tpl',
-      1 => 1396395465,
+      1 => 1396398402,
       2 => 'file',
     ),
   ),
@@ -32,16 +32,21 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <link type="text/css" rel="stylesheet" href="./css/registraDespesa.css"/>
         <link type="text/css" rel="stylesheet" href="./inc/Formee/css/formee-style.css"/>
         <link type="text/css" rel="stylesheet" href="./inc/Formee/css/formee-structure.css" />
-        <script type="text/javascript" src="../inc/Formee/js/formee.js"></script>
+        <link type="text/css" rel="stylesheet" href="./js/plugins/jQuery-ui/css/start/jquery-ui-start.css" />
+        
     </head>
     <body>
         <div id="container" class="formee">
             <form method="post" action="Financeiro.php" enctype="multipart/form-data">
                 <h3>Registrar Despesa</h3>
                 <hr/>
-                <div class="grid-12-12">
+                <div class="grid-8-12">
                     <label for="descricao">Descrição:</label>
                     <input type="text" class="txt bradius" name="descricao"/>
+                </div>
+                <div class="grid-4-12">
+                    <label for="data">Data:</label>
+                    <input type="text" class="txt bradius datepicker" name="data" id="data"/>
                 </div>
                 <div class="grid-8-12">
                     <label for="formapagamento">Forma de pagamento:</label>
@@ -63,8 +68,9 @@ $_smarty_tpl->tpl_vars['linha']->_loop = true;
                     <input type="text" class="txt bradius" name="valorPago"/>
                 </div>
 
-                    <p>&nbsp;</p>
-                <hr/>
+                <div>
+                    <hr/>
+                </div>
                 <div id="botoes">
                     <a href="Financeiro.php" class="btn bradius" target="_parent">Cancelar</a>
                     <input type="submit" class="btn bradius" value="Salvar"/>
@@ -72,5 +78,19 @@ $_smarty_tpl->tpl_vars['linha']->_loop = true;
                 </div>
             </form>
         </div>
+
+        <script type="text/javascript" src="./js/lib/jquery-2.0.3.min.js"></script>
+        <script type="text/javascript" src="../inc/Formee/js/formee.js"></script>
+        <script type="text/javascript" src="./js/plugins/jQuery-ui/js/jquery.ui.datepicker-pt-BR.js"></script>
+        <script type="text/javascript" src="./js/plugins/jquery.maskedinput.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('.datepicker').mask("99/99/9999");
+                $(function() {
+                    $('.datepicker').datepicker();
+                });
+
+            });
+        </script>
     </body>
 </html><?php }} ?>

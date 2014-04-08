@@ -15,7 +15,7 @@
     </head>
     <body>
         <div id="container" class="formee">
-            <form method="post" action="Financeiro.php" enctype="multipart/form-data">
+            <form method="post" action="Financeiro.php" enctype="multipart/form-data" target="_parent">
                 <h3>Registrar Pagamento</h3>
                 <hr/>
                 <div class="grid-8-12">
@@ -53,7 +53,7 @@
                         <select name="bandeiraCartao" class="txt bradius">
                             <option value="">Selecione</option>
                             {foreach from=$bandeiras item=linha}
-                                <option value="{$linha.idbandeiracartao}">{$linha.descricao}</option>
+                                <option value="{$linha.idbandeiraCartao}">{$linha.descricao}</option>
                             {/foreach}
                         </select>
                     </div>
@@ -116,6 +116,7 @@
                     <a href="Financeiro.php" class="btn bradius" target="_parent">Cancelar</a>
                     <input type="submit" class="btn bradius" value="Salvar"/>
                     <input type="hidden" name="acao" value="registraPagamento"/>
+                    <input type="hidden" name="paciente" value="{$paciente}"/>
                 </div>
             </form>
         </div>

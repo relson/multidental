@@ -204,26 +204,21 @@ CREATE TABLE IF NOT EXISTS `multidental`.`categoriaFinanceiro` (
 ) ENGINE = InnoDB
   DEFAULT CHARACTER SET = utf8;
 
+CREATE TABLE IF NOT EXISTS `multidental`.`tipoMovimentacao` (
+  `idTipoMovimentacao` INT NOT NULL AUTO_INCREMENT,
+  `descricao` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idTipoMovimentacao`)
+) ENGINE = InnoDB
+  DEFAULT CHARACTER SET = utf8;
+
 CREATE TABLE IF NOT EXISTS `multidental`.`financeiro` (
   `idFinanceiro` INT NOT NULL AUTO_INCREMENT,
-  `tipoMovimentacao` VARCHAR(255) NOT NULL,
-  `descricao` VARCHAR(255) NOT NULL,
   `valor` FLOAT NOT NULL,
+  `DtPagamento` DATETIME NOT NULL,
   `idcategoria` INT NOT NULL,
-  `idPessoa` INT NOT NULL,
-  PRIMARY KEY (`idFinanceiro`),
-  INDEX `fk_financeiro_categoria_idx` (`idcategoria` ASC),
-  INDEX `fk_financeiro_pessoa_idx` (`idPessoa` ASC),
-  CONSTRAINT `fk_financeiro_categoria`
-    FOREIGN KEY (`idcategoria`)
-    REFERENCES `multidental`.`categoriaFinanceiro` (`idcategoria`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_financeiro_pessoa`
-    FOREIGN KEY (`idPessoa`)
-    REFERENCES `multidental`.`pessoa` (`idPessoa`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION
+  `idPaciente` INT NULL,
+  `idTipoMovimentacao` INT NOT NULL,
+  PRIMARY KEY (`idfinanceiro`)
 ) ENGINE = InnoDB
   DEFAULT CHARACTER SET = utf8;
 
@@ -238,5 +233,54 @@ CREATE TABLE  IF NOT EXISTS `multidental`.`bandeiraCartao` (
   `idbandeiraCartao` INT NOT NULL AUTO_INCREMENT,
   `descricao` VARCHAR(45),
   PRIMARY KEY (`idbandeiraCartao`)
+) ENGINE = InnoDB
+  DEFAULT CHARACTER SET = utf8;
+
+CREATE TABLE IF NOT EXISTS `multidental`.`cartao` (
+  `idcartao` INT(11) NOT NULL AUTO_INCREMENT,
+  `descricao` VARCHAR(255) NULL,
+  `parcelas` VARCHAR(11) NULL,
+  `idBandeiraCartao` INT(11) NULL,
+  `idformaPagamento` INT(11) NULL,
+  PRIMARY KEY (`idcartao`)
+) ENGINE = InnoDB
+  DEFAULT CHARACTER SET = utf8;
+
+CREATE TABLE IF NOT EXISTS `multidental`.`depositoBancario` (
+  `iddepositoBancario` INT(11) NOT NULL AUTO_INCREMENT,
+  `comprovante` VARCHAR(255) NULL,
+  `idformaPagamento` INT(11) NULL,
+  INDEX `idformaPagamento_idx` (`idformaPagamento` ASC),
+  PRIMARY KEY (`iddepositoBancario`)
+) ENGINE = InnoDB
+  DEFAULT CHARACTER SET = utf8;
+
+CREATE TABLE IF NOT EXISTS `multidental`.`planoDentario` (
+  `idplanoDentario` INT(11) NOT NULL AUTO_INCREMENT,
+  `idformaPagamento` INT(11) NULL,
+  `plano` VARCHAR(255) NULL,
+  INDEX `idformaPagamento_idx` (`idformaPagamento` ASC),
+  PRIMARY KEY (`idplanoDentario`)
+) ENGINE = InnoDB
+  DEFAULT CHARACTER SET = utf8;
+
+CREATE TABLE IF NOT EXISTS `multidental`.`trasferencia` (
+  `idtrasferencia` INT(11) NOT NULL AUTO_INCREMENT,
+  `comprovante` VARCHAR(255) NULL,
+  `idformaPagamento` INT(11) NULL,
+  INDEX `idformaPagamento_idx` (`idformaPagamento` ASC),
+  PRIMARY KEY (`idtrasferencia`)
+) ENGINE = InnoDB
+  DEFAULT CHARACTER SET = utf8;
+
+CREATE TABLE IF NOT EXISTS `multidental`.`cheque` (
+  `idcheque` INT NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(255) NULL,
+  `banco` VARCHAR(255) NULL,
+  `agencia` VARCHAR(255) NULL,
+  `conta` VARCHAR(45) NULL,
+  `data` DATE NULL,
+  `idformaPagamento` INT(11) NULL,
+  PRIMARY KEY (`idcheque`)
 ) ENGINE = InnoDB
   DEFAULT CHARACTER SET = utf8;

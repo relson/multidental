@@ -31,6 +31,109 @@ class TratamentoDAO extends Tratamento {
             echo 'ERRO: ' . $e->getMessage();
         }
     }
+    
+    public function insertFinanceiro($financeiro) {
+        try {
+            //query de insert
+            $stmt = $this->conexao->prepare("INSERT INTO financeiro (valor, DtPagamento, idcategoria, idPaciente, idTipoMovimentacao, idFormaPagamento) VALUES (?, ?, ?, ?, ?, ?)");
+            
+            $stmt->bindValue(1, $financeiro->getValor());
+            $stmt->bindValue(2, $financeiro->getDtPagamento());
+            $stmt->bindValue(3, $financeiro->getIdCategoria());
+            $stmt->bindValue(4, $financeiro->getIdPaciente());
+            $stmt->bindValue(5, $financeiro->getIdTipoMovimentacao());
+            $stmt->bindValue(6, $financeiro->getIdFormaPagamento());
+            
+            //execução da query de insert
+            $stmt->execute();
+            
+            $this->close();
+            
+            return $this->conexao->lastInsertId();
+        } catch (PDOException $e) {
+            echo 'ERRO: '.$e->getMessage();
+        }
+    }
+    
+    public function insertCartao($cartao) {
+        try {
+            $stmt = $this->conexao->prepare("INSERT INTO cartao (parcelas, idBandeiraCartao, idFinanceiro) VALUE (?, ?, ?)");
+            
+            $stmt->bindValue(1, $cartao->getParcelas());
+            $stmt->bindValue(2, $cartao->getIdbandeiracartao());
+            $stmt->bindValue(3, $cartao->getIdFinanceiro());
+            
+            $stmt->execute();
+            
+            $this->close();
+        } catch (PDOException $e) {
+            echo 'ERRO: '.$e->getMessage();
+        }
+    }
+    
+    public function insertCheque($cheque) {
+        try {
+            $stmt = $this->conexao->prepare("INSERT INTO cheque (nome, banco, agencia, conta, data, idFinanceiro) VALUES (?, ?, ?, ?, ?, ?)");
+            
+            $stmt->bindValue(1, $chque->getNome());
+            $stmt->bindValue(2, $chque->getBanco());
+            $stmt->bindValue(3, $chque->getAgencia());
+            $stmt->bindValue(4, $chque->getConta());
+            $stmt->bindValue(5, $chque->getData());
+            $stmt->bindValue(6, $cheque->getIdFinanceiro());
+            
+            $stmt->execute();
+            
+            $this->close();
+        } catch (PDOException $e) {
+            echo 'ERRO: '.$e->getMessage();
+        }
+    }
+    
+    public function insertDeposito($deposito) {
+        try {
+            $stmt = $this->conexao->prepare("INSERT INTO depositobancario (comprovante, idFinanceiro) VALUES (?, ?)");
+            
+            $stmt->bindValue(1, $deposito->getComprovante());
+            $stmt->bindValue(2, $deposito->getIdFinanceiro());
+            
+            $stmt->execute();
+            
+            $this->close();
+        } catch (PDOException $e) {
+            echo 'ERRO: '.$e->getMessage();
+        }
+    }
+    
+    public function insertPlano($plano) {
+        try {
+            $stmt = $this->conexao->prepare("INSERT INTO planodentario (plano, idFinanceiro) VALUES (?, ?)");
+            
+            $stmt->bindValue(1, $plano->getPlano());
+            $stmt->bindValue(2, $plano->getIdFinanceiro());
+            
+            $stmt->execute();
+            
+            $this->close();
+        } catch (PDOException $e) {
+            echo 'ERRO: '.$e->getMessage();
+        }
+    }
+    
+    public function insertTransferencia($transferencia) {
+        try {
+            $stmt = $this->conexao->prepare("INSERT INTO trasferencia (comprovante, idFinanceiro) VALUES (?, ?)");
+            
+            $stmt->bindValue(1, $transferencia->getComprovante());
+            $stmt->bindValue(3, $transferencia->getIdFinanceiro()); 
+            
+            $stmt->execute();
+            
+            $this->close();
+        } catch (PDOException $e) {
+            echo 'ERRO: '.$e->getMessage();
+        }
+    }
 
     public function update($tratamento, $idTratamento) {
         try {
@@ -177,6 +280,18 @@ class TratamentoDAO extends Tratamento {
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
             echo 'ERRO: ' . $e->getMessage();
+        }
+    }
+    
+    public function selecao($query) {
+        try {
+            $stmt = $this->conexao->query($query);
+            
+            $this->close();
+            
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            echo 'ERRO: '.$e->getMessage();
         }
     }
 

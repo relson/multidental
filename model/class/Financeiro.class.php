@@ -1,55 +1,46 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of financeiro
- *
- * @author Igor Lula
- */
-
 require_once 'C:/Dropbox/www/multidental/db/PDOConnectionFactory.class.php';
 
 class Financeiro extends PDOConnectionFactory {
     
     private $idFinanceiro;
-    private $tipoMovimentacao;
-    private $descricao;
+    private $idTipoMovimentacao;
     private $valor;
+    private $DtPagamento;
     private $idCategoria;
     private $idPaciente;
-    
+    private $idFormaPagamento;
+
+
     public function __construct() {
         
     }
     
-    public function Financeiro($idFinanceiro, $tipoMovimentacao, $descricao, $valor, $idCategoria, $idPaciente) {
+    public function Financeiro($idFinanceiro, $idTipoMovimentacao, $valor, $DtPagamento, $idCategoria, $idPaciente, $idFormaPagamento) {
         self::setIdFinanceiro($idFinanceiro);
-        self::setTipoMovimentacao($tipoMovimentacao);
-        self::setDescricao($descricao);
+        self::setTipoMovimentacao($idTipoMovimentacao);
         self::setValor($valor);
+        self::setDtPagamento($DtPagamento);
         self::setIdCategoria($idCategoria);
         self::setIdPaciente($idPaciente);
+        self::setIdFormaPagamento($idFormaPagamento);
     }
     
     public function getIdFinanceiro() {
         return $this->idFinanceiro;
     }
 
-    public function getTipoMovimentacao() {
-        return $this->tipoMovimentacao;
-    }
-
-    public function getDescricao() {
-        return $this->descricao;
+    public function getIdTipoMovimentacao() {
+        return $this->idTipoMovimentacao;
     }
 
     public function getValor() {
         return $this->valor;
+    }
+    
+    public function getDtPagamento() {
+        return $this->DtPagamento;
     }
 
     public function getIdCategoria() {
@@ -59,21 +50,25 @@ class Financeiro extends PDOConnectionFactory {
     public function getIdPaciente() {
         return $this->idPaciente;
     }
+    
+    public function getIdFormaPagamento() {
+        return $this->idFormaPagamento;
+    }
 
     public function setIdFinanceiro($idFinanceiro) {
         $this->idFinanceiro = $idFinanceiro;
     }
 
-    public function setTipoMovimentacao($tipoMovimentacao) {
-        $this->tipoMovimentacao = $tipoMovimentacao;
-    }
-
-    public function setDescricao($descricao) {
-        $this->descricao = $descricao;
+    public function setIdTipoMovimentacao($idTipoMovimentacao) {
+        $this->idTipoMovimentacao = $idTipoMovimentacao;
     }
 
     public function setValor($valor) {
         $this->valor = $valor;
+    }
+    
+    public function setDtPagamento($DtPagamento) {
+        $this->DtPagamento = $DtPagamento;
     }
 
     public function setIdCategoria($idCategoria) {
@@ -81,8 +76,10 @@ class Financeiro extends PDOConnectionFactory {
     }
 
     public function setIdPaciente($idPaciente) {
-        $this->idPessoa = $idPaciente;
+        $this->idPaciente= $idPaciente;
     }
 
-
+    public function setIdFormaPagamento($idFormaPagamento) {
+        $this->idFormaPagamento = $idFormaPagamento;
+    }
 }
