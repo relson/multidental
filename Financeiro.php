@@ -236,8 +236,6 @@ if (isset($_POST['acao'])) {
     
     $sm->assign("dados", $dados);
     
-    $sm->assign("total", $total);
-    
     $entradas = $tratamentoDAO->selecaoTotalBalanco(1);
     $entrada = round($entradas[0]['valor'], 2);
     
