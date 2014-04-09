@@ -669,24 +669,13 @@ table td[id="atendido"] {
     text-align: center;
 }
 
-#label-entrada {
-    font-weight: normal;
-    color: #009b1f;
-}
-
 #span-entrada, #span-saida {
     font-weight: bold;
     font-size: 1.2em;
 }
 
-#label-saida {
+#label-entrada, #label-saida, #label-total {
     font-weight: normal;
-    color: red;
-}
-
-#label-total {
-    font-weight: normal;
-    color: #217b01;
 }
 
 #span-total {
@@ -761,18 +750,18 @@ table td[id="atendido"] {
     text-align: center;
 }
 
-#movimentacao table td[id="movimentacao-data-total"], #movimentacao table td[id="movimentacao-descricao-total"], #movimentacao table td[id="movimentacao-categoria-total"] {
-    background-color: #c0c0c0;
+#movimentacao table tr[id="movimentacao-tr-total"] {
+    background-color: #cecece;
+}
+
+#movimentacao table td[id="movimentacao-total"] {
     font-weight: bold;
-    text-align: center;
+    text-align: left;
 }
 
 #movimentacao table td[id="movimentacao-valor-total"] {
-    width: 150px;
-    text-align: center;
-    background-color: #c0c0c0;
     font-weight: bold;
-    font-size: 1.1em;
+    text-align: center;
 }
 
 .positivo {

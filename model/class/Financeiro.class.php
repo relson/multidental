@@ -5,6 +5,7 @@ require_once 'C:/Dropbox/www/multidental/db/PDOConnectionFactory.class.php';
 class Financeiro extends PDOConnectionFactory {
     
     private $idFinanceiro;
+    private $descricao;
     private $idTipoMovimentacao;
     private $valor;
     private $DtPagamento;
@@ -29,6 +30,10 @@ class Financeiro extends PDOConnectionFactory {
     
     public function getIdFinanceiro() {
         return $this->idFinanceiro;
+    }
+    
+    public function getDescricao() {
+        return $this->descricao;
     }
 
     public function getIdTipoMovimentacao() {
@@ -57,6 +62,10 @@ class Financeiro extends PDOConnectionFactory {
 
     public function setIdFinanceiro($idFinanceiro) {
         $this->idFinanceiro = $idFinanceiro;
+    }
+    
+    public function setDescricao($descricao) {
+        $this->descricao = $descricao;
     }
 
     public function setIdTipoMovimentacao($idTipoMovimentacao) {

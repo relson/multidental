@@ -100,11 +100,13 @@ if (isset($_POST['acao'])) {
         case 'registraDespesa':
             if (isset($_POST['descricao']) and isset($_POST['data']) and isset($_POST['formapagamento']) and isset($_POST['valorPago'])) {
                 $formaPagamento = $_POST['formapagamento'];
+                $valor = $config->valor2float($_POST['valorPago']);
 
                 $financeiro->setDescricao($_POST['descricao']);
                 $financeiro->setDtPagamento($config->date2US($_POST['data']));
-                $financeiro->setValor($_POST['valorPago']);
+                $financeiro->setValor($valor);
                 $financeiro->setIdTipoMovimentacao('2');
+                $financeiro->setIdFormaPagamento($formaPagamento);
 
                 if ($formaPagamento === '1') {
                     $financeiro->setIdCategoria('3');
@@ -118,7 +120,15 @@ if (isset($_POST['acao'])) {
                     $financeiro->setIdCategoria('1');
                 }
 
-                $financeiroDAO->insert($financeiro);
+//                echo $financeiro->getDescricao().'<br>'
+//                     .$financeiro->getDtPagamento().'<br>'.
+//                        $financeiro->getValor().'<br>'.
+//                        $financeiro->getIdTipoMovimentacao().'<br>'.
+//                        $financeiro->getIdFormaPagamento().'<br>'.
+//                        $financeiro->getIdCategoria();
+//                exit();
+
+                $tratamentoDAO->insertDespesa($financeiro);
 
                 header("Location: Financeiro.php");
             }
@@ -207,10 +217,61 @@ if (isset($_POST['acao'])) {
 
     $sm->display("registraDespesa.tpl");
 } else {
-    $query = 'SELECT * FROM financeiro';
-    $tratamentoDAO->selecao($query);
+    $mes = $config->getMesNum(date('M'));
+    $mesNome = date('d') . ' de ' . $config->getMesBR(date('M')) . ' de ' . date('Y');
 
-    $sm->assign("mes", $mespt);
+    $sm->assign("mes", $mesNome);
+    
+    $query = "SELECT financeiro.descricao,  financeiro.valor, financeiro.`DtPagamento`, financeiro.`idTipoMovimentacao`, categoriafinanceiro.nome as categoria, pessoa.nome as paciente "
+            . "FROM financeiro LEFT JOIN categoriafinanceiro on (categoriafinanceiro.idcategoria = financeiro.idcategoria)"
+            . "LEFT JOIN paciente ON (paciente.`idPaciente` = financeiro.`idPaciente`)"
+            . "LEFT JOIN pessoa ON (pessoa.`idPessoa` = paciente.`idPessoa`)"
+            . "WHERE DATE_FORMAT(`DtPagamento`, '%c') = " . $mes . " ORDER BY financeiro.`DtPagamento` ASC";
+    $dados = $tratamentoDAO->selecao($query);
 
-    $sm->display("financeiro.tpl");
+    for ($i = 0; $i < sizeof($dados); $i++) {
+        $dados[$i]['DtPagamento'] = $config->date2BR(substr($dados[$i]['DtPagamento'], 0, 10));
+        $dados[$i]['valor'] = round($dados[$i]['valor'], 2);
+    }
+    
+    $sm->assign("dados", $dados);
+    
+    $sm->assign("total", $total);
+    
+    $entradas = $tratamentoDAO->selecaoTotalBalanco(1);
+    $entrada = round($entradas[0]['valor'], 2);
+    
+    $sm->assign("entrada", $entrada);
+    
+    $saidas = $tratamentoDAO->selecaoTotalBalanco(2);
+    $saida = round($saidas[0]['valor'], 2);
+    
+    $sm->assign("saida", $saida);
+    
+    $balancogeral = round(($entrada - $saida), 2);
+    
+    $sm->assign("balancogeral", $balancogeral);
+    
+    $entradasMes = $tratamentoDAO->selectTotalMes(1, $mes);
+    $entradaMes = round($entradasMes[0]['valor'], 2);
+    
+    $sm->assign("entradaMes", $entradaMes);
+    
+    $saidasMes = $tratamentoDAO->selectTotalMes(2, $mes);
+    $saidaMes = round($saidasMes[0]['valor'], 2);
+    
+    $sm->assign("saidaMes", $saidaMes);
+    
+    $totalMes = round(($entradaMes - $saidaMes), 2);
+    $sm->assign("totalMes", $totalMes);
+
+    $sm->display('financeiro.tpl');
 }
+//} else {
+//    $query = 'SELECT * FROM financeiro';
+//    $tratamentoDAO->selecao($query);
+//
+//    $sm->assign("mes", $mespt);
+//
+//    $sm->display("financeiro.tpl");
+//}

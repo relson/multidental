@@ -63,6 +63,40 @@ class Configs {
         
         return $mes_extenso;
     }
+    
+    public function getMesNum($mes) {
+        $mesN = array("Jan" => "1", 
+                    "Feb" => "2", 
+                    "Mar" => "3", 
+                    "Apr" => "4", 
+                    "May" => "5", 
+                    "Jun" => "6", 
+                    "Jul" => "7", 
+                    "Aug" => "8", 
+                    "Nov" => "9", 
+                    "Sep" => "10", 
+                    "Oct" => "11", 
+                    "Dec" => "12");
+        
+        return $mesN[$mes];
+    }
+    
+    public function getMesBR($mes) {
+        $mess = array("Jan" => "Janeiro", 
+                  "Feb" => "Fevereiro", 
+                  "Mar" => "Marco", 
+                  "Apr" => "Abril", 
+                  "May" => "Maio", 
+                  "Jun" => "Junho", 
+                  "Jul" => "Julho", 
+                  "Aug" => "Agosto", 
+                  "Nov" => "Novembro", 
+                  "Sep" => "Setembro", 
+                  "Oct" => "Outubro", 
+                  "Dec" => "Dezembro");
+        
+        return $mess[$mes];
+    }
 
 }
 

@@ -1,29 +1,35 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-04-01 20:50:06
+<?php /* Smarty version Smarty-3.1.14, created on 2014-04-08 22:17:05
          compiled from ".\view\financeiro.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:27619533b4be7cb7de5-95824714%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:15885534494330192b4-26158071%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '07b1f9cc90aef9aa184780296496d85b44fa9c63' => 
     array (
       0 => '.\\view\\financeiro.tpl',
-      1 => 1396396194,
+      1 => 1397006217,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '27619533b4be7cb7de5-95824714',
+  'nocache_hash' => '15885534494330192b4-26158071',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_533b4be7cefd59_33123505',
+  'unifunc' => 'content_5344943306cc08_15132641',
   'variables' => 
   array (
     'mes' => 0,
+    'entrada' => 0,
+    'saida' => 0,
+    'balancogeral' => 0,
+    'totalMes' => 0,
+    'dados' => 0,
+    'linha' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_533b4be7cefd59_33123505')) {function content_533b4be7cefd59_33123505($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("view/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_5344943306cc08_15132641')) {function content_5344943306cc08_15132641($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("view/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <?php echo $_smarty_tpl->getSubTemplate ("view/menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
@@ -65,10 +71,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                         <label id="label-balanco-geral">Balanço Geral</label>
                     </div>
                     <hr />
-                    <span id="span-entrada" for="labelentradas">Entrada: <label id="label-entrada">R$ 31.940,00</label></span><br />
-                    <span id="span-saida" for="labelsaidas">Saídas: <label id="label-saida">R$ 9.216,70</label></span>
+                    <span id="span-entrada" for="labelentradas">Entrada: <label id="label-entrada" class="positivo">R$ <?php echo $_smarty_tpl->tpl_vars['entrada']->value;?>
+</label></span><br />
+                    <span id="span-saida" for="labelsaidas">Saídas: <label id="label-saida" class="negativo">R$ <?php echo $_smarty_tpl->tpl_vars['saida']->value;?>
+</label></span>
                     <hr />
-                    <span id="span-total" for="total">Saldo: <label id="label-total">R$ 22.723,30</label></span>
+                    <span id="span-total" for="total">Saldo: 
+                        <label id="label-total" class="<?php if (($_smarty_tpl->tpl_vars['balancogeral']->value<0)){?>negativo<?php }else{ ?>positivo<?php }?>">
+                            R$ <?php echo $_smarty_tpl->tpl_vars['balancogeral']->value;?>
+
+                        </label>
+                    </span>
                 </div><!-- balanco-geral -->
 
                 <div class="bradius" id="balanco-mes">
@@ -76,10 +89,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                         <label id="label-balanco-mes">Entradas e saídas deste mês</label>
                     </div>
                     <hr />
-                    <span id="span-entrada" for="labelentradas">Entrada: <label id="label-entrada">R$ 12.720,00</label></span><br />
-                    <span id="span-saida" for="labelsaidas">Saídas: <label id="label-saida">R$ 2.399,70</label></span>
+                    <span id="span-entrada" for="labelentradas">Entrada: <label id="label-entrada" class="positivo">R$ 12.720,00</label></span><br />
+                    <span id="span-saida" for="labelsaidas">Saídas: <label id="label-saida" class="negativo">R$ 2.399,70</label></span>
                     <hr />
-                    <span id="span-total" for="total">Saldo: <label id="label-total">R$ 10.320,30</label></span>
+                    <span id="span-total" for="total">Saldo: 
+                        <label id="label-total" class="<?php if (($_smarty_tpl->tpl_vars['totalMes']->value<0)){?>negativo<?php }else{ ?>positivo<?php }?>">
+                            R$ <?php echo $_smarty_tpl->tpl_vars['totalMes']->value;?>
+
+                        </label>
+                    </span>
                 </div><!-- balanco-mes -->
             </div><!-- balanco -->
 
@@ -98,82 +116,46 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     <label for="movimentos">Movimentos deste mês</label>
                 </div>
                 <table>
-                    <tr id="rotulo">
-                        <td id="movimentacao-data">Data</td>
-                        <td id="movimentacao-descricao">Descrição</td>
-                        <td id="movimentacao-categoria">Forma de Pagamento</td>
-                        <td id="movimentacao-valor">Valor - R$</td>
-                    </tr>
-                    <tr>
-                        <td id="movimentacao-data">01/12/2013</td>
-                        <td id="movimentacao-descricao">Pagamento recebido</td>
-                        <td id="movimentacao-categoria">Caixa</td>
-                        <td id="movimentacao-valor"  class="positivo">3.750,00</td>
-                    </tr>
-                    <tr>
-                        <td id="movimentacao-data">01/12/2013</td>
-                        <td id="movimentacao-descricao">Pagamento efetuado</td>
-                        <td id="movimentacao-categoria">Caixa</td>
-                        <td id="movimentacao-valor"  class="negativo">620,00</td>
-                    </tr>
-                    <tr>
-                        <td id="movimentacao-data">01/12/2013</td>
-                        <td id="movimentacao-descricao">Pagamento recebido</td>
-                        <td id="movimentacao-categoria">Banco</td>
-                        <td id="movimentacao-valor"  class="positivo">5.820,00</td>
-                    </tr>
-                    <tr>
-                        <td id="movimentacao-data">02/12/2013</td>
-                        <td id="movimentacao-descricao">Pagamento efetuado. Conta de luz</td>
-                        <td id="movimentacao-categoria">Banco</td>
-                        <td id="movimentacao-valor"  class="negativo">317,00</td>
-                    </tr>
-                    <tr>
-                        <td id="movimentacao-data">02/12/2013</td>
-                        <td id="movimentacao-descricao">Pagamento efetuado. Conta de telefone</td>
-                        <td id="movimentacao-categoria">Banco</td>
-                        <td id="movimentacao-valor"  class="negativo">471,35</td>
-                    </tr>
-                    <tr>
-                        <td id="movimentacao-data">02/12/2013</td>
-                        <td id="movimentacao-descricao">Pagamento recebido</td>
-                        <td id="movimentacao-categoria">Cartão</td>
-                        <td id="movimentacao-valor"  class="positivo">3.150,00</td>
-                    </tr>
-                    <!--
-                    <tr>
-                        <td id="movimentacao-data">13/11/2013</td>
-                        <td id="movimentacao-descricao">Pagamento recebido</td>
-                        <td id="movimentacao-categoria">Cartão</td>
-                        <td id="movimentacao-valor"  class="positivo">1.675,00</td>
-                    </tr>
-                    <tr>
-                        <td id="movimentacao-data">14/11/2013</td>
-                        <td id="movimentacao-descricao">Pagamento efetuado. Boleto bancário</td>
-                        <td id="movimentacao-categoria">Banco</td>
-                        <td id="movimentacao-valor"  class="negativo">1.417,30</td>
-                    </tr>
-                    -->
-                    <tr>
-                        <td id="movimentacao-data">03/12/2013</td>
-                        <td id="movimentacao-descricao">Pagamento de funcionarios</td>
-                        <td id="movimentacao-categoria">Caixa</td>
-                        <td id="movimentacao-valor"  class="negativo">991,35</td>
-                    </tr>
-                    <!--
-                    <tr>
-                        <td id="movimentacao-data">18/11/2013</td>
-                        <td id="movimentacao-descricao">Pagamento recebido</td>
-                        <td id="movimentacao-categoria">Caixa</td>
-                        <td id="movimentacao-valor"  class="positivo">4.825,00</td>
-                    </tr>
-                    -->
-                    <tr>
-                        <td id="movimentacao-data-total">TOTAL</td>
-                        <td id="movimentacao-descricao-total"></td>
-                        <td id="movimentacao-categoria-total"></td>
-                        <td id="movimentacao-valor-total" class="positivo">10.320,30</td>
-                    </tr>
+                    <thead>
+                        <tr id="rotulo">
+                            <td id="movimentacao-data">Data</td>
+                            <td id="movimentacao-descricao">Descrição</td>
+                            <td id="movimentacao-categoria">Forma de Pagamento</td>
+                            <td id="movimentacao-valor">Valor - R$</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php  $_smarty_tpl->tpl_vars['linha'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['linha']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['dados']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['linha']->key => $_smarty_tpl->tpl_vars['linha']->value){
+$_smarty_tpl->tpl_vars['linha']->_loop = true;
+?>
+                            <tr>
+                                <td id="movimentacao-data"><?php echo $_smarty_tpl->tpl_vars['linha']->value['DtPagamento'];?>
+</td>
+                                <td id="movimentacao-descricao">
+                                    <?php if (($_smarty_tpl->tpl_vars['linha']->value['idTipoMovimentacao']==1)){?>
+                                        Pagamento recebido do paciente <em><?php echo $_smarty_tpl->tpl_vars['linha']->value['paciente'];?>
+</em>
+                                    <?php }elseif(($_smarty_tpl->tpl_vars['linha']->value['idTipoMovimentacao']==2)){?>
+                                        <?php echo $_smarty_tpl->tpl_vars['linha']->value['descricao'];?>
+
+                                    <?php }?>
+                                </td>
+                                <td id="movimentacao-categoria"><?php echo $_smarty_tpl->tpl_vars['linha']->value['categoria'];?>
+</td>
+                                <td id="movimentacao-valor"><?php echo $_smarty_tpl->tpl_vars['linha']->value['valor'];?>
+</td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                    <tfoot>
+                        <tr id="movimentacao-tr-total">
+                            <td colspan="3" id="movimentacao-total">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TOTAL</td>
+                            <td id="movimentacao-valor-total" class="<?php if (($_smarty_tpl->tpl_vars['totalMes']->value<0)){?>negativo<?php }else{ ?>positivo<?php }?>"><?php echo $_smarty_tpl->tpl_vars['totalMes']->value;?>
+</td>
+                        </tr>
+                    </tfoot>
                 </table>
 
             </div><!-- movimentacao -->

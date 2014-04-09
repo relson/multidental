@@ -11,7 +11,7 @@
     </head>
     <body>
         <div id="container" class="formee">
-            <form method="post" action="Financeiro.php" enctype="multipart/form-data">
+            <form method="post" action="Financeiro.php" enctype="multipart/form-data" target="_parent">
                 <h3>Registrar Despesa</h3>
                 <hr/>
                 <div class="grid-8-12">
@@ -43,6 +43,7 @@
                     <a href="Financeiro.php" class="btn bradius" target="_parent">Cancelar</a>
                     <input type="submit" class="btn bradius" value="Salvar"/>
                     <input type="hidden" name="acao" value="registraDespesa"/>
+                    <input type="hidden" name="paciente" value="{$paciente}"/>
                 </div>
             </form>
         </div>

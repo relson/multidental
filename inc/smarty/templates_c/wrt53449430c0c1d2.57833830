@@ -1,5 +1,35 @@
-{include file="view/header.tpl"}
-{include file="view/menu.tpl"}
+<?php /* Smarty version Smarty-3.1.14, created on 2014-04-08 21:28:32
+         compiled from ".\view\financeiro.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:27619533b4be7cb7de5-95824714%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '07b1f9cc90aef9aa184780296496d85b44fa9c63' => 
+    array (
+      0 => '.\\view\\financeiro.tpl',
+      1 => 1397003311,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '27619533b4be7cb7de5-95824714',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_533b4be7cefd59_33123505',
+  'variables' => 
+  array (
+    'mes' => 0,
+    'dados' => 0,
+    'linha' => 0,
+    'total' => 0,
+  ),
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_533b4be7cefd59_33123505')) {function content_533b4be7cefd59_33123505($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("view/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
+<?php echo $_smarty_tpl->getSubTemplate ("view/menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
 
 <div id="tabela">
     <form name="form_financeiro" method="POST" enctype="multipart/form-data">
@@ -26,7 +56,8 @@
         </div>
 
         <div id="separator">
-            <span>{$mes}</span>
+            <span><?php echo $_smarty_tpl->tpl_vars['mes']->value;?>
+</span>
         </div>
 
         <div id="financeiro">
@@ -37,14 +68,10 @@
                         <label id="label-balanco-geral">Balanço Geral</label>
                     </div>
                     <hr />
-                    <span id="span-entrada" for="labelentradas">Entrada: <label id="label-entrada" class="positivo">R$ {$entrada}</label></span><br />
-                    <span id="span-saida" for="labelsaidas">Saídas: <label id="label-saida" class="negativo">R$ {$saida}</label></span>
+                    <span id="span-entrada" for="labelentradas">Entrada: <label id="label-entrada">R$ 31.940,00</label></span><br />
+                    <span id="span-saida" for="labelsaidas">Saídas: <label id="label-saida">R$ 9.216,70</label></span>
                     <hr />
-                    <span id="span-total" for="total">Saldo: 
-                        <label id="label-total" class="{if ($balancogeral < 0)}negativo{else}positivo{/if}">
-                            R$ {$balancogeral}
-                        </label>
-                    </span>
+                    <span id="span-total" for="total">Saldo: <label id="label-total">R$ 22.723,30</label></span>
                 </div><!-- balanco-geral -->
 
                 <div class="bradius" id="balanco-mes">
@@ -52,14 +79,10 @@
                         <label id="label-balanco-mes">Entradas e saídas deste mês</label>
                     </div>
                     <hr />
-                    <span id="span-entrada" for="labelentradas">Entrada: <label id="label-entrada" class="positivo">R$ 12.720,00</label></span><br />
-                    <span id="span-saida" for="labelsaidas">Saídas: <label id="label-saida" class="negativo">R$ 2.399,70</label></span>
+                    <span id="span-entrada" for="labelentradas">Entrada: <label id="label-entrada">R$ 12.720,00</label></span><br />
+                    <span id="span-saida" for="labelsaidas">Saídas: <label id="label-saida">R$ 2.399,70</label></span>
                     <hr />
-                    <span id="span-total" for="total">Saldo: 
-                        <label id="label-total" class="{if ($totalMes < 0)}negativo{else}positivo{/if}">
-                            R$ {$totalMes}
-                        </label>
-                    </span>
+                    <span id="span-total" for="total">Saldo: <label id="label-total">R$ 10.320,30</label></span>
                 </div><!-- balanco-mes -->
             </div><!-- balanco -->
 
@@ -87,25 +110,29 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {foreach from=$dados item=linha}
-                            <tr>
-                                <td id="movimentacao-data">{$linha.DtPagamento}</td>
-                                <td id="movimentacao-descricao">
-                                    {if ($linha.idTipoMovimentacao == 1)}
-                                        Pagamento recebido do paciente <em>{$linha.paciente}</em>
-                                    {elseif ($linha.idTipoMovimentacao == 2)}
-                                        {$linha.descricao}
-                                    {/if}
-                                </td>
-                                <td id="movimentacao-categoria">{$linha.categoria}</td>
-                                <td id="movimentacao-valor">{$linha.valor}</td>
-                            </tr>
-                        {/foreach}
+                        <?php  $_smarty_tpl->tpl_vars['linha'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['linha']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['dados']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['linha']->key => $_smarty_tpl->tpl_vars['linha']->value){
+$_smarty_tpl->tpl_vars['linha']->_loop = true;
+?>
+                        <tr>
+                            <td id="movimentacao-data"><?php echo $_smarty_tpl->tpl_vars['linha']->value['DtPagamento'];?>
+</td>
+                            <td id="movimentacao-descricao">
+                                
+                            </td>
+                            <td id="movimentacao-categoria"><?php echo $_smarty_tpl->tpl_vars['linha']->value['categoria'];?>
+</td>
+                            <td id="movimentacao-valor"><?php echo $_smarty_tpl->tpl_vars['linha']->value['valor'];?>
+</td>
+                        </tr>
+                        <?php } ?>
                     </tbody>
                     <tfoot>
                         <tr id="movimentacao-tr-total">
-                            <td colspan="3" id="movimentacao-total">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TOTAL</td>
-                            <td id="movimentacao-valor-total" class="{if ($totalMes < 0)}negativo{else}positivo{/if}">{$totalMes}</td>
+                            <td colspan="3" id="movimentacao-total">&nbsp;TOTAL</td>
+                            <td id="movimentacao-valor-total"><?php echo $_smarty_tpl->tpl_vars['total']->value;?>
+</td>
                         </tr>
                     </tfoot>
                 </table>
@@ -117,4 +144,5 @@
     </form>
 </div><!-- tabela -->
 
-{include file="view/footer.tpl"}
+<?php echo $_smarty_tpl->getSubTemplate ("view/footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php }} ?>
