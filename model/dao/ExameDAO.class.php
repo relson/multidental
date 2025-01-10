@@ -1,6 +1,6 @@
 <?php
 
-require_once 'C:/Dropbox/www/multidental/model/class/Exame.class.php';
+require_once './model/class/Exame.class.php';
 
 class ExameDAO extends Exame {
 

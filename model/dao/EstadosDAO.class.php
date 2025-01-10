@@ -1,6 +1,6 @@
 <?php
 
-require_once 'C:/Dropbox/www/multidental/model/class/Estados.class.php';
+require_once './model/class/Estados.class.php';
 
 class EstadosDAO extends Estados {
 

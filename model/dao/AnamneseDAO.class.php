@@ -1,6 +1,6 @@
 <?php
 
-require_once 'C:/Dropbox/www/multidental/model/class/Anamnese.class.php';
+require_once './model/class/Anamnese.class.php';
 
 class AnamneseDAO extends Anamnese {
     

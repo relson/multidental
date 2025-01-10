@@ -1,6 +1,6 @@
 <?php
 
-require_once 'C:/Dropbox/www/multidental/model/class/Horarios.class.php';
+require_once './model/class/Horarios.class.php';
 
 class HorariosDAO extends Horarios {
     

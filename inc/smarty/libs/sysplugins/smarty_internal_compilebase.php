@@ -72,7 +72,7 @@ abstract class Smarty_Internal_CompileBase {
                 }
                 // named attribute
             } else {
-                $kv = each($mixed);
+                $kv = legacy_each($mixed);
                 // option flag?
                 if (in_array($kv['key'], $this->option_flags)) {
                     if (is_bool($kv['value'])) {
@@ -172,5 +172,10 @@ abstract class Smarty_Internal_CompileBase {
     }
 
 }
-
+function legacy_each(&$arr) {
+    $key = key($arr);
+    $result = ($key === null) ? false : [$key, current($arr), 'key' => $key, 'value' => current($arr)];
+    next($arr);
+    return $result;
+}
 ?>

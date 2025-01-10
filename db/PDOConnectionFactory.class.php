@@ -1,6 +1,6 @@
 <?php
 
-require_once 'C:/Dropbox/www/multidental/config/Configs.php';
+require_once './config/Configs.php';
 
 //Fabrica de conexões MultiDental
 class PDOConnectionFactory extends Configs {

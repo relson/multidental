@@ -1,6 +1,6 @@
 <?php
 
-require_once 'C:/Dropbox/www/multidental/model/class/Dentista.class.php';
+require_once './model/class/Dentista.class.php';
 
 class DentistaDAO extends Dentista {
         

@@ -1,6 +1,6 @@
 <?php
 
-require_once 'C:/Dropbox/www/multidental/model/class/Pessoa.class.php';
+require_once './model/class/Pessoa.class.php';
 
 class PessoaDAO extends Pessoa {
 
@@ -176,10 +176,10 @@ class PessoaDAO extends Pessoa {
 
             for ($t = 9; $t < 11; $t++) {
                 for ($d = 0, $c = 0; $c < $t; $c++) {
-                    $d += $cpf{$c} * (($t + 1) - $c);
+                    $d += $cpf[$c] * (($t + 1) - $c);
                 }
                 $d = ((10 * $d) % 11) % 10;
-                if ($cpf{$c} != $d) {
+                if ($cpf[$c] != $d) {
                     return false;
                 }
             }

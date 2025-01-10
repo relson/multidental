@@ -1,6 +1,6 @@
 <?php
 
-require_once 'C:/Dropbox/www/multidental/model/class/Tratamento.class.php';
+require_once './model/class/Tratamento.class.php';
 
 class TratamentoDAO extends Tratamento {
 

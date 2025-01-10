@@ -1,6 +1,6 @@
 <?php
 
-require_once ('C:/Dropbox/www/multidental/model/class/Agendamento.class.php');
+require_once ('./model/class/Agendamento.class.php');
 
 class AgendamentoDAO extends Agendamento {
 

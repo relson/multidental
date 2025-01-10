@@ -1,6 +1,6 @@
 <?php
 
-require_once 'C:/Dropbox/www/multidental/db/PDOConnectionFactory.class.php';
+require_once './db/PDOConnectionFactory.class.php';
 
 class Horarios extends PDOConnectionFactory {
     

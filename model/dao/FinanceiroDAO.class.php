@@ -11,7 +11,7 @@
  *
  * @author Igor Lula
  */
-require_once 'C:/Dropbox/www/multidental/model/class/Financeiro.class.php';
+require_once './model/class/Financeiro.class.php';
 
 class FinanceiroDAO extends Financeiro {
 
